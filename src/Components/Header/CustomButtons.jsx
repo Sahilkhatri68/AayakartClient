@@ -89,7 +89,7 @@ const CustomButtons = () => {
           Become Seller
         </Typography>
       </Link>
-      <Link className={classes.container}>
+      <Link to="/Appsoon" className={classes.container}>
         <FaDownload style={{ height: 20, width: 20, color: "black" }} />
         <Typography style={{ marginLeft: 5, color: "black" }}>App</Typography>
       </Link>
