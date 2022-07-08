@@ -58,8 +58,10 @@ export default function ProductDetail() {
 
   return (
     <>
-      <TableCell>{product.description}</TableCell>
-
+      <TableRow className={classes.smallText}>
+        <TableCell className={classes.greyTextColor}>Description</TableCell>
+        <TableCell>{product.description}</TableCell>
+      </TableRow>
       <Typography>Available offers</Typography>
       <Box className={classes.smallText}>
         <Typography>
@@ -105,9 +107,6 @@ export default function ProductDetail() {
             <TableCell colSpan={2}>
               {/* <img src={adURL} style={{ width: 390 }} alt="" /> */}
             </TableCell>
-          </TableRow>
-          <TableRow className={classes.smallText}>
-            <TableCell className={classes.greyTextColor}>Description</TableCell>
           </TableRow>
         </TableBody>
       </Table>
