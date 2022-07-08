@@ -10,6 +10,14 @@ import { useSelector, useDispatch } from "react-redux";
 import { loadRazorpay } from "../../razorpay/loadPayment";
 import axios from "axios";
 import "./actionItemMultiImg.css";
+import Snackbar from "@mui/material/Snackbar";
+import MuiAlert, { AlertProps } from "@mui/material/Alert";
+import * as React from "react";
+
+const Alert = React.forwardRef(function Alert(props, ref) {
+  return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
+});
+
 const useStyle = makeStyles((theme) => ({
   leftContainer: {
     minWidth: "40%",
@@ -41,10 +49,9 @@ const useStyle = makeStyles((theme) => ({
 
 export default function ActionItem() {
   const classes = useStyle();
-  //   const history = useHistory();
-  //   const { account } = useContext(LoginContext);
 
   const [product, setProduct] = useState([]);
+
   // getting image from api
   const { slug } = useParams();
   async function GetData() {
@@ -60,11 +67,14 @@ export default function ActionItem() {
 
   // posting item to cart
   const [cart, setCart] = useState([]);
+
   async function AddItemToCart() {
-    const res = await axios.post(`https://web.chatvait.com/api/cart/${slug}`);
-    console.log(res.data);
-    setCart(res.data);
-    console.log(res.data);
+    await axios
+      .post(`https://web.chatvait.com/api/cart/${slug}`)
+      .then((res) => {
+        console.log(res.data);
+        setCart(res.data);
+      });
   }
 
   const buyNow = async () => {
@@ -100,6 +110,12 @@ export default function ActionItem() {
       >
         <Flash /> Buy Now
       </Button>
+
+      <Snackbar open={true} autoHideDuration={3000}>
+        <Alert severity="success" sx={{ width: "100%" }}>
+          This is a success message!
+        </Alert>
+      </Snackbar>
     </Box>
   );
 }
