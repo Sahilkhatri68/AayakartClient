@@ -1,0 +1,42 @@
+.bgbanner {
+  width: 100%;
+}
+.people {
+  display: flex;
+}
+.insidePeople {
+  width: 33.33%;
+  display: flex;
+}
+.midbanner {
+  text-align: center;
+  justify-content: center;
+  padding: 10px;
+}
+.people {
+  display: flex;
+  text-align: center;
+  justify-content: center;
+}
+@media (max-width: 950px) {
+  .people {
+    margin: auto;
+    width: 200px;
+  }
+}
+@media (max-width: 650px) {
+  .midbanner {
+    margin: auto;
+    width: 200px;
+  }
+  .imagepeople {
+    margin: auto;
+    width: 150px;
+  }
+}
+.enroll {
+  background-color: #152b7a;
+  color: white;
+  border: 1px;
+  border-radius: 10px;
+}

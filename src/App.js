@@ -7,6 +7,7 @@ import ContextProvider from "./context/ContextProvider";
 import Cart from "./Components/Cart/Cart";
 import { Box } from "@material-ui/core";
 import Footer from "./Components/Footer/Footer";
+import Seller from "./Components/Cart/BecomeSeller";
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
               <Route exact path="/" component={Home} />
               <Route exact path="/cart" component={Cart} />
               <Route exact path="/product/:slug" component={DetailView} />
+              <Route exact path="/seller" component={Seller}></Route>
               <Route component={NotFound} />
             </Switch>
           </Box>
