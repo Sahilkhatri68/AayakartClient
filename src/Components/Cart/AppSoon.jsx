@@ -3,7 +3,7 @@ import soon from "../images/cs.jpg";
 export default function Appsoon() {
   return (
     <div className="soon">
-      <img src={soon} alt="soon" />
+      <img src={soon} alt="soon" style={{ width: "full" }} />
     </div>
   );
 }
