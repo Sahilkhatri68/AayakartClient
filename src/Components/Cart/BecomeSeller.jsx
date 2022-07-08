@@ -16,12 +16,11 @@ export default function Seller() {
           <div className="insidePeople">
             <div className="imagepeople">
               {/* <img className="moneyimg" src={growth}></img> */}
-              <h1>& get money <button className="enroll">Enroll Now</button> </h1>
+              <h1>& get money</h1> 
+              <button className="enroll">Enroll Now</button>
             </div>
           </div>
-          <div className="normalbanner">
-            
-          </div>
+          <div className="normalbanner"></div>
         </div>
       </div>
     </>
