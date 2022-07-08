@@ -37,8 +37,8 @@ const useStyle = makeStyles({
 
 export default function ProductDetail() {
   const classes = useStyle();
-  const adURL =
-    "https://rukminim1.flixcart.com/lockin/774/185/images/CCO__PP_2019-07-14.png?q=50";
+  // const adURL =
+  //   "https://rukminim1.flixcart.com/lockin/774/185/images/CCO__PP_2019-07-14.png?q=50";
   const date = new Date(new Date().getTime() + 5 * 24 * 60 * 60 * 1000);
 
   const { slug } = useParams();
@@ -58,6 +58,8 @@ export default function ProductDetail() {
 
   return (
     <>
+      <TableCell>{product.description}</TableCell>
+
       <Typography>Available offers</Typography>
       <Box className={classes.smallText}>
         <Typography>
@@ -101,12 +103,11 @@ export default function ProductDetail() {
           </TableRow>
           <TableRow>
             <TableCell colSpan={2}>
-              <img src={adURL} style={{ width: 390 }} alt="" />
+              {/* <img src={adURL} style={{ width: 390 }} alt="" /> */}
             </TableCell>
           </TableRow>
           <TableRow className={classes.smallText}>
             <TableCell className={classes.greyTextColor}>Description</TableCell>
-            <TableCell>{product.description}</TableCell>
           </TableRow>
         </TableBody>
       </Table>
