@@ -10,17 +10,10 @@ export default function Seller() {
           <img className="bgbanner" src={bgbanner}></img>
         </div>
         <div className="midbanner">
-          <h1>Sell your product's here! </h1>
+          <h1>Sell your product's here! & get money</h1>
         </div>
         <div className="people">
-          <div className="insidePeople">
-            <div className="imagepeople">
-              {/* <img className="moneyimg" src={growth}></img> */}
-              <h1>& get money</h1> 
-              <button className="enroll">Enroll Now</button>
-            </div>
-          </div>
-          <div className="normalbanner"></div>
+          <button className="enroll">Enroll Now</button>
         </div>
       </div>
     </>

@@ -40,3 +40,8 @@
   border: 1px;
   border-radius: 10px;
 }
+.people {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
