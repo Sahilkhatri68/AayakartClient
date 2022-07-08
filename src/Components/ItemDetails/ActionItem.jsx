@@ -11,12 +11,12 @@ import { loadRazorpay } from "../../razorpay/loadPayment";
 import axios from "axios";
 import "./actionItemMultiImg.css";
 import Snackbar from "@mui/material/Snackbar";
-import MuiAlert, { AlertProps } from "@mui/material/Alert";
-import * as React from "react";
+// import MuiAlert, { AlertProps } from "@mui/material/Alert";
+// import * as React from "react";
 
-const Alert = React.forwardRef(function Alert(props, ref) {
-  return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
-});
+// const Alert = React.forwardRef(function Alert(props, ref) {
+//   return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
+// });
 
 const useStyle = makeStyles((theme) => ({
   leftContainer: {
@@ -74,6 +74,7 @@ export default function ActionItem() {
       .then((res) => {
         console.log(res.data);
         setCart(res.data);
+        alert("Item added");
       });
   }
 
@@ -111,11 +112,11 @@ export default function ActionItem() {
         <Flash /> Buy Now
       </Button>
 
-      <Snackbar open={true} autoHideDuration={3000}>
+      {/* <Snackbar open={true} autoHideDuration={3000}>
         <Alert severity="success" sx={{ width: "100%" }}>
           This is a success message!
         </Alert>
-      </Snackbar>
+      </Snackbar> */}
     </Box>
   );
 }
