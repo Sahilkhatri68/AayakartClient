@@ -1,5 +1,6 @@
 import React from "react";
 import "./Enroll.css";
+import Alogo from "../images/ayakartLogo.png";
 export default function Enroll() {
   return (
     <>
@@ -7,7 +8,7 @@ export default function Enroll() {
         <div className="container">
           <div className="row justify-content-center">
             <div className="col-md-6 text-center mb-5">
-              <h2 className="heading-section">Contact Form #03</h2>
+              <h2 className="heading-section">Register As a Seller</h2>
             </div>
           </div>
           <div className="row justify-content-center">
@@ -21,8 +22,7 @@ export default function Enroll() {
                       </div>
                       <div className="text">
                         <p>
-                          <span>Address:</span> 198 West 21th Street, Suite 721
-                          New York NY 10016
+                          <span>Address:</span> Aayakart address
                         </p>
                       </div>
                     </div>
@@ -53,7 +53,7 @@ export default function Enroll() {
                               className="__cf_email__"
                               data-cfemail="40292e262f00392f3532332934256e232f2d"
                             >
-                              [email&nbsp;protected]
+                              [Aayakart@gmail.com]
                             </span>
                           </a>
                         </p>
@@ -116,10 +116,24 @@ export default function Enroll() {
                               />
                             </div>
                           </div>
+                          <div className="col-md-6">
+                            <div className="form-group">
+                              <label className="label" htmlFor="email">
+                                Password
+                              </label>
+                              <input
+                                type="password"
+                                className="form-control"
+                                name="password"
+                                id="email"
+                                placeholder="password"
+                              />
+                            </div>
+                          </div>
                           <div className="col-md-12">
                             <div className="form-group">
                               <label className="label" htmlFor="subject">
-                                Subject
+                                City
                               </label>
                               <input
                                 type="text"
@@ -133,7 +147,7 @@ export default function Enroll() {
                           <div className="col-md-12">
                             <div className="form-group">
                               <label className="label" htmlFor="#">
-                                Message
+                                Phone Number
                               </label>
                               <textarea
                                 name="message"
@@ -141,7 +155,7 @@ export default function Enroll() {
                                 id="message"
                                 cols={30}
                                 rows={4}
-                                placeholder="Message"
+                                placeholder="Number"
                                 defaultValue={""}
                               />
                             </div>
@@ -164,8 +178,7 @@ export default function Enroll() {
                     <div
                       className="info-wrap w-100 p-5 img"
                       style={{
-                        backgroundImage:
-                          "url(images/ximg.jpg.pagespeed.ic.XWkNClO4gV.webp)",
+                        backgroundImage: { Alogo },
                       }}
                     ></div>
                   </div>
