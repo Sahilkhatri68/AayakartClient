@@ -28,7 +28,7 @@ function App() {
               <Route exact path="/Appsoon" component={Appsoon}></Route>
               <Route exact path="/Enroll" component={Enroll}></Route>
               <Route exact path="/Viewall" component={Viewall}></Route>
-              <Route exact path="/user" component={Profile}></Route>
+              <Route exact path="/Profile" component={Profile}></Route>
               <Route component={NotFound} />
             </Switch>
           </Box>

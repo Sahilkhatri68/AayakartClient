@@ -46,7 +46,7 @@ export default function Profile() {
             // logout();
           }}
         >
-          <PowerSettingsNew fontSize="small" color="primary" />
+          <PowerSettingsNew color="primary" />
           <Typography className={classes.logout}>Logout</Typography>
         </MenuItem>
       </Menu>

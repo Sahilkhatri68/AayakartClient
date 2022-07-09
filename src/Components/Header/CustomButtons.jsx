@@ -100,7 +100,7 @@ const CustomButtons = () => {
         </Badge>
         <Typography style={{ marginLeft: 5, color: "black" }}>Cart</Typography>
       </Link>
-      <Link to="/user" className={classes.container}>
+      <Link to="/Profile" className={classes.container}>
         <Badge badgeContent={cartItems?.length} style={{ color: "black" }}>
           <PersonIcon />
         </Badge>
