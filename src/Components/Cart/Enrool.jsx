@@ -175,12 +175,9 @@ export default function Enroll() {
                     </div>
                   </div>
                   <div className="col-md-5 d-flex align-items-stretch">
-                    <div
-                      className="info-wrap w-100 p-5 img"
-                      style={{
-                        backgroundImage: { Alogo },
-                      }}
-                    ></div>
+                    <div className="info-wrap w-100 p-5 img">
+                        <img src={Alogo} alt="Alogo"></img>
+                    </div>
                   </div>
                 </div>
               </div>
