@@ -11,6 +11,7 @@ import Seller from "./Components/Cart/BecomeSeller";
 import Appsoon from "./Components/Cart/AppSoon";
 import Enroll from "./Components/Cart/Enrool";
 import Viewall from "./Components/Home/Viewall";
+import Profile from "./Components/Header/Profile";
 
 function App() {
   return (
@@ -27,6 +28,7 @@ function App() {
               <Route exact path="/Appsoon" component={Appsoon}></Route>
               <Route exact path="/Enroll" component={Enroll}></Route>
               <Route exact path="/Viewall" component={Viewall}></Route>
+              <Route exact path="/user" component={Profile}></Route>
               <Route component={NotFound} />
             </Switch>
           </Box>
