@@ -91,9 +91,15 @@ const MultiSlide = ({ data, timer, title }) => {
             <Countdown date={Date.now() + 5.04e7} renderer={renderer} />
           </Box>
         )}
-        <Button variant="contained" color="primary" className={classes.button}>
-          View All
-        </Button>
+        <Link to="/Viewall">
+          <Button
+            variant="contained"
+            color="primary"
+            className={classes.button}
+          >
+            View All
+          </Button>
+        </Link>
       </Box>
       <Divider />
       <Carousel
