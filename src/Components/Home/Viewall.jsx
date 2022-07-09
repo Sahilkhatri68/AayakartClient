@@ -54,7 +54,7 @@ export default function SimpleAccordion() {
     boxShadow: 0,
   }));
   return (
-    <div>
+    <div style={{ padding: 5 }}>
       <Box sx={{ flexGrow: 1 }}>
         <Grid container spacing={2}>
           <Grid item xs={4}>
