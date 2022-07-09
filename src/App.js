@@ -24,7 +24,7 @@ function App() {
               <Route exact path="/product/:slug" component={DetailView} />
               <Route exact path="/seller" component={Seller}></Route>
               <Route exact path="/Appsoon" component={Appsoon}></Route>
-              <Route exact path="/Enrool" component={Enroll}></Route>
+              <Route exact path="/Enroll" component={Enroll}></Route>
               <Route component={NotFound} />
             </Switch>
           </Box>
