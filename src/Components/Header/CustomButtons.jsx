@@ -6,6 +6,7 @@ import LoginDialog from "../Login/LoginDialog";
 import { LoginContext } from "../../context/ContextProvider";
 import { useSelector } from "react-redux";
 import Profile from "./Profile";
+import PersonIcon from "@mui/icons-material/Person";
 
 import { FaDownload } from "react-icons/fa";
 import { GiReceiveMoney } from "react-icons/gi";
@@ -100,7 +101,10 @@ const CustomButtons = () => {
         <Typography style={{ marginLeft: 5, color: "black" }}>Cart</Typography>
       </Link>
       <Link className={classes.container}>
-        <Badge badgeContent={cartItems?.length} color="secondary"></Badge>
+        <Badge badgeContent={cartItems?.length} style={{ color: "black" }}>
+          <PersonIcon />
+        </Badge>
+        <Typography style={{ marginLeft: 5, color: "black" }}>User</Typography>
       </Link>
       <LoginDialog open={open} setOpen={setOpen} setAccount={setAccount} />
     </Box>
