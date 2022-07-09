@@ -43,7 +43,7 @@ export default function SimpleAccordion() {
       <div>
         <Accordion>
           <AccordionSummary
-            expandIcon={<ExpandMoreIcon />}
+            expandIcon={<ExpandMore />}
             aria-controls="panel1a-content"
             id="panel1a-header"
           >
