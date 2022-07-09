@@ -176,7 +176,11 @@ export default function Enroll() {
                   </div>
                   <div className="col-md-5 d-flex align-items-stretch">
                     <div className="info-wrap w-100 p-5 img">
-                        <img src={Alogo} alt="Alogo"></img>
+                      <img
+                        src={Alogo}
+                        style={{ width: "full", margin: "auto" }}
+                        alt="Alogo"
+                      ></img>
                     </div>
                   </div>
                 </div>
