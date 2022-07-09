@@ -15,7 +15,10 @@ import { useState } from "react";
 import Grid from "@mui/material/Grid";
 import { styled } from "@mui/material/styles";
 import Paper from "@mui/material/Paper";
-
+import Checkbox from "@mui/material/Checkbox";
+import FormGroup from "@mui/material/FormGroup";
+import FormControlLabel from "@mui/material/FormControlLabel";
+import FormLabel from "@mui/material/FormLabel";
 const price = [
   {
     value: 0,
@@ -82,6 +85,24 @@ export default function SimpleAccordion() {
                   marks={price}
                 />
               </Box>
+              <FormControlLabel
+                value="Xl"
+                control={<Checkbox />}
+                label="Xl"
+                labelPlacement="end"
+              />
+              <FormControlLabel
+                value="M"
+                control={<Checkbox />}
+                label="M"
+                labelPlacement="end"
+              />
+              <FormControlLabel
+                value="S"
+                control={<Checkbox />}
+                label="S"
+                labelPlacement="end"
+              />
             </Item>
           </Grid>
           <Grid item xs={8}>
