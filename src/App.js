@@ -9,6 +9,7 @@ import { Box } from "@material-ui/core";
 import Footer from "./Components/Footer/Footer";
 import Seller from "./Components/Cart/BecomeSeller";
 import Appsoon from "./Components/Cart/AppSoon";
+import Enroll from "./Components/Cart/Enrool";
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
               <Route exact path="/product/:slug" component={DetailView} />
               <Route exact path="/seller" component={Seller}></Route>
               <Route exact path="/Appsoon" component={Appsoon}></Route>
+              <Route exact path="/Enrool" component={Enroll}></Route>
               <Route component={NotFound} />
             </Switch>
           </Box>
