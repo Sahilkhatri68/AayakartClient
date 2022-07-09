@@ -68,24 +68,7 @@ const Search = () => {
             <div className={classes.searchIcon}>
               <SearchIcon />
             </div>
-            {
-              // text && 
-              // <List className={classes.list} hidden={open}>
-              //   {
-              //     products.filter(product => product.title.longTitle.toLowerCase().includes(text.toLowerCase())).map(product => (
-              //       <ListItem>
-              //         <Link 
-              //           to={`/product/${product.id}`} 
-              //           style={{ textDecoration:'none', color:'inherit'}}
-              //           onClick={() => setOpen(true)}  
-              //         >
-              //           {product.title.longTitle}
-              //         </Link>
-              //       </ListItem>
-              //     ))
-              //   }  
-              // </List>
-            }
+        
         </div>
     )
 }
