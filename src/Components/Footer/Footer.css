@@ -367,8 +367,9 @@ footer li {
     margin: auto;
   }
   .content {
-    width: 25%;
-    margin: auto;
+    display: inline-block;
+    width: 50%;
+    text-align: center;
   }
   .mailus {
     display: block;
