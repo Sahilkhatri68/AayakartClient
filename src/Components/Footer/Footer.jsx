@@ -1,5 +1,7 @@
 import React from "react";
 import "./Footer.css";
+import { Link } from "react-router-dom";
+
 // import aayakartLogo from "../Images/aayakartLogo.png";
 import { IoBagHandleSharp } from "react-icons/io5";
 import { AiFillQuestionCircle } from "react-icons/ai";
@@ -138,12 +140,12 @@ export default function Footer() {
           <div className="row" style={{ margin: 0 }}>
             <div className="container-fluid">
               <div className="seller">
-                <a href="#" style={{ color: "white" }}>
+                <Link to="/seller" style={{ color: "white" }}>
                   <IoBagHandleSharp
                     style={{ height: 20, width: 20, color: "yellow" }}
                   />
                   Become a Seller
-                </a>
+                </Link>
               </div>
               <div className="Help">
                 <a href="#" style={{ color: "white" }}>
