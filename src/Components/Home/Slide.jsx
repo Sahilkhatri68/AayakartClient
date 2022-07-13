@@ -50,6 +50,7 @@ const useStyle = makeStyles((theme) => ({
   deal: {
     display: "flex",
     padding: "15px 20px",
+    justifyContent: "space-between",
   },
   dealText: {
     fontSize: 22,
