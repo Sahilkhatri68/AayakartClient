@@ -8,7 +8,7 @@ import { useSelector } from "react-redux";
 import Profile from "./Profile";
 import PersonIcon from "@mui/icons-material/Person";
 
-import { FaDownload } from "react-icons/fa";
+import { FaDownload, FaGooglePlay } from "react-icons/fa";
 import { GiReceiveMoney } from "react-icons/gi";
 const useStyle = makeStyles((theme) => ({
   container: {
@@ -46,9 +46,10 @@ const useStyle = makeStyles((theme) => ({
     background: "#FFFFFF",
     textTransform: "none",
     fontWeight: 600,
-    borderRadius: 2,
     padding: "5px 10px",
     height: 42,
+    border: 1,
+    borderRadius: 4,
     boxShadow: "none",
     [theme.breakpoints.down("sm")]: {
       background: "#2874f0",
@@ -85,13 +86,12 @@ const CustomButtons = () => {
         </Link>
       )}
       <Link to="/seller" className={classes.container}>
-        <GiReceiveMoney style={{ height: 20, width: 20, color: "black" }} />
         <Typography style={{ marginLeft: 10, color: "black" }}>
           Become Seller
         </Typography>
       </Link>
       <Link to="/Appsoon" className={classes.container}>
-        <FaDownload style={{ height: 20, width: 20, color: "black" }} />
+        <FaGooglePlay style={{ height: 20, width: 20, color: "black" }} />
         <Typography style={{ marginLeft: 5, color: "black" }}>App</Typography>
       </Link>
       <Link to="/cart" className={classes.container}>
