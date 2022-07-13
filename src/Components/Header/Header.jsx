@@ -57,6 +57,7 @@ const useStyle = makeStyles((theme) => ({
   },
   customButtons: {
     margin: "0 0 0 auto",
+    width: 100,
     [theme.breakpoints.down("sm")]: {
       display: "none",
     },
