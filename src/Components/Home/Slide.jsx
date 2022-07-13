@@ -119,7 +119,11 @@ const MultiSlide = ({ data, timer, title }) => {
         itemClass="carousel-item-padding-40-px"
       >
         {data.map((temp) => (
-          <Link to={`product/${temp.slug}`} style={{ textDecoration: "none" }}>
+          <div
+            component={RouterLink}
+            to={`product/${temp.slug}`}
+            style={{ textDecoration: "none" }}
+          >
             <Box textAlign="center" className={classes.wrapper}>
               <img
                 src={temp.featured_image}
@@ -145,7 +149,7 @@ const MultiSlide = ({ data, timer, title }) => {
                 ${temp.sale_price}
               </Typography>
             </Box>
-          </Link>
+          </div>
         ))}
       </Carousel>
     </Box>
