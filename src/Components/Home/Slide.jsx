@@ -8,7 +8,7 @@ import {
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import Countdown from "react-countdown";
-import { Link } from "react-router-dom";
+import { Link as RouterLink } from "react-router-dom";
 
 const responsive = {
   desktop: {
@@ -91,15 +91,16 @@ const MultiSlide = ({ data, timer, title }) => {
             <Countdown date={Date.now() + 5.04e7} renderer={renderer} />
           </Box>
         )}
-        <Link to="/viewall">
-          <Button
-            variant="contained"
-            color="primary"
-            className={classes.button}
-          >
-            View All
-          </Button>
-        </Link>
+
+        <Button
+          variant="contained"
+          component={RouterLink}
+          to="/viewall"
+          color="primary"
+          className={classes.button}
+        >
+          View All
+        </Button>
       </Box>
       <Divider />
       <Carousel
