@@ -32,7 +32,7 @@ const useStyle = makeStyles((theme) => ({
   },
   logo: {
     width: 140,
-    height: 40,
+    height: 57,
   },
   container: {
     display: "flex",
