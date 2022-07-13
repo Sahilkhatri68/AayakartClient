@@ -47,7 +47,7 @@ const useStyle = makeStyles((theme) => ({
     textTransform: "none",
     fontWeight: 600,
     padding: "5px 10px",
-    height: 42,
+    height: 27,
     border: 1,
     borderRadius: 4,
     boxShadow: "none",

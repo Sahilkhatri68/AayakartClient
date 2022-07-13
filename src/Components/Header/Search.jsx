@@ -11,7 +11,7 @@ const useStyle = makeStyles((theme) => ({
     borderRadius: 2,
     marginLeft: 10,
     width: "38%",
-    backgroundColor: "#fff",
+    backgroundColor: "#dddddd",
     display: "flex",
   },
   searchIcon: {
@@ -19,6 +19,8 @@ const useStyle = makeStyles((theme) => ({
     padding: 5,
     display: "flex",
     color: "blue",
+    background: "#dddddd",
+    marginRight: 10,
   },
   inputRoot: {
     fontSize: "unset",
