@@ -43,7 +43,7 @@ const useStyle = makeStyles((theme) => ({
   },
   login: {
     color: "#2874f0",
-    background: "#FFFFFF",
+    background: "#dddddd",
     textTransform: "none",
     fontWeight: 600,
     padding: "5px 10px",
@@ -53,7 +53,7 @@ const useStyle = makeStyles((theme) => ({
     boxShadow: "none",
     [theme.breakpoints.down("sm")]: {
       background: "#2874f0",
-      color: "#FFFFFF",
+      color: "#dddddd",
     },
   },
 }));
