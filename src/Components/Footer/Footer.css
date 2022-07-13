@@ -56,6 +56,7 @@
 
 .footer-wrap {
   background-size: cover;
+  background-color: #172337;
 }
 
 .footer-wrap h3 {
@@ -379,7 +380,6 @@ footer li {
 @media (max-width: 768px) {
   .footer-wrap h3 {
     margin-top: 27px;
-    background-color: #172337;
   }
 
   footer .round-btn {
