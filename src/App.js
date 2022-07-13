@@ -12,6 +12,7 @@ import Appsoon from "./Components/Cart/AppSoon";
 import Enroll from "./Components/Cart/Enrool";
 import Viewall from "./Components/Home/Viewall";
 import Profile from "./Components/Header/Profile";
+import BasicGrid from "./Components/Cart/grid";
 
 function App() {
   return (
@@ -27,7 +28,7 @@ function App() {
               <Route exact path="/seller" component={Seller}></Route>
               <Route exact path="/Appsoon" component={Appsoon}></Route>
               <Route exact path="/Enroll" component={Enroll}></Route>
-              <Route exact path="/Viewall" component={Viewall}></Route>
+              <Route exact path="/Viewall" component={BasicGrid}></Route>
               <Route exact path="/Profile" component={Profile}></Route>
               <Route component={NotFound} />
             </Switch>
