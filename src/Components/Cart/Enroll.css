@@ -1,5 +1,3 @@
- 
-
 article,
 aside,
 figcaption,
@@ -12,7 +10,6 @@ nav,
 section {
   display: block;
 }
- 
 
 hr {
   -webkit-box-sizing: content-box;
@@ -542,6 +539,8 @@ pre code {
   padding-left: 15px;
   margin-right: auto;
   margin-left: auto;
+  margin-top: 20px;
+  border-top: 1px solid #454541;
 }
 
 .row {
@@ -10806,7 +10805,7 @@ textarea.form-control {
   font-size: 16px;
   font-weight: bold;
 }
-.Alogos{
-    width: 100%;
-    margin: auto;
+.Alogos {
+  width: 100%;
+  margin: auto;
 }
