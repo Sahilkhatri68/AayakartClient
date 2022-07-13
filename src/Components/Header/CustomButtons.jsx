@@ -47,10 +47,11 @@ const useStyle = makeStyles((theme) => ({
     textTransform: "none",
     fontWeight: 600,
     padding: "5px 10px",
-    height: 27,
+    height: 35,
     border: 1,
     borderRadius: 4,
     boxShadow: "none",
+    marginLeft: 10,
     [theme.breakpoints.down("sm")]: {
       background: "#2874f0",
       color: "#dddddd",
