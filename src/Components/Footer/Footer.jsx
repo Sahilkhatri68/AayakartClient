@@ -35,116 +35,126 @@ export default function Footer() {
           small appliances, furniture, electronics and watches, you can now shop
           without burning a hole in your pocket. If you've been eyeing a product
           for a long time, chances are it may be up for a no cost EMI. Take a
-          look ASAP! Terms and conditions apply.{" "}
+          look ASAP! Terms and conditions apply.
         </p>
       </div>
       <footer>
         <div className="footer-wrap">
-          <div className="second_class">
-            <div className="container second_class_bdr">
-              <div className="row" style={{ margin: 0 }}>
-                <div className="col-md-4 col-sm-6">
-                  <div className="footer-logo">
-                    <img
-                      src={Alogo}
-                      style={{ height: 60, width: 200 }}
-                      alt="logo"
-                    />
-                  </div>
-                  <p>
-                    Your one-stop career platform to find Jobs, Internships,
-                    Professional Trainings, Projects, and Volunteering
-                    Opportunities.
-                  </p>
-                </div>
-                <div className="col-md-2 col-sm-6">
-                  <h3>About</h3>
-                  <ul className="footer-links">
-                    <li>
-                      <a href="#">Home</a>
-                    </li>
-                    <li>
-                      <a href="#">About us</a>
-                    </li>
-                    <li>
-                      <a href="#">Triedge Partners</a>
-                    </li>
-                    <li>
-                      <a href="#">Contact Us</a>
-                    </li>
-                    <li>
-                      <a href="#" target="_blank">
-                        Terms &amp; Conditions
-                      </a>
-                    </li>
-                    <li>
-                      <a href="#" target="_blank">
-                        Privacy Policy
-                      </a>
-                    </li>
-                    <li>
-                      <a href="#">Sitemap</a>
-                    </li>
-                  </ul>
-                </div>
-                <div className="col-md-3 col-sm-6">
-                  <h3>Help</h3>
-                  <ul className="footer-category">
-                    <li>
-                      <a href="#">Fresher Jobs</a>
-                    </li>
-                    <li>
-                      <a href="#">InternEdge - Internships &amp; Projects </a>
-                    </li>
-                    <li>
-                      <a href="#">Resume Edge - Resume Writing Services</a>
-                    </li>
-                    <li>
-                      <a href="#">Readers Galleria - Curated Library</a>
-                    </li>
-                    <li>
-                      <a href="#">Trideus - Campus Ambassadors</a>
-                    </li>
-                  </ul>
-                  <div className="clearfix" />
-                </div>
-                <div className="col-md-3 col-sm-6">
-                  <h3>Company Address</h3>
-                  <ul className="footer-links">
-                    <li>
-                      <a href="#">Triedge Events</a>
-                    </li>
-                    <li>
-                      <a href="#">Jobs &amp; Internship Fair 2019</a>
-                    </li>
-                  </ul>
-                </div>
-              </div>
+          <div className="wrapper">
+            <div className="content">
+              <div className="about">About</div>
+              <a href="" className="links">
+                Contact us
+              </a>
+              <a href="" className="links">
+                About us
+              </a>
+              <a href="" className="links">
+                Careers
+              </a>
+              <a href="" className="links">
+                abc
+              </a>
+            </div>
+            <div className="content">
+              <div className="about">Help</div>
+              <a href="" className="links">
+                Payement
+              </a>
+              <a href="" className="links">
+                Shipping
+              </a>
+              <a href="" className="links">
+                Returns
+              </a>
+              <a href="" className="links">
+                FAQ'S
+              </a>
+            </div>
+            <div className="content">
+              <div className="about">Policy</div>
+              <a href="" className="links">
+                Terms of use
+              </a>
+              <a href="" className="links">
+                Sitemap
+              </a>
+              <a href="" className="links">
+                Return Policy
+              </a>
+              <a href="" className="links">
+                Shipping
+              </a>
+            </div>
+            <div className="content">
+              <div className="about">Social</div>
+              <a href="" className="links">
+                Facebook
+              </a>
+              <a href="" className="links">
+                Twitter
+              </a>
+              <a href="" className="links">
+                Instagram
+              </a>
+              <a href="" className="links">
+                WhatsApp
+              </a>
+            </div>
+            <div className="linespace" />
+            <div className="blank" />
+            <div className="mailus">
+              <div className="about">Mail us</div>
+              <a href="" className="links">
+                AayakartprivateLimited@gmail.com
+              </a>
+              <a href="" className="links">
+                AayakartprivateLimited@gmail.com
+              </a>
+              <a href="" className="links">
+                AayakartprivateLimited@gmail.com
+              </a>
+              <a href="" className="links">
+                AayakartprivateLimited@gmail.com
+              </a>
+            </div>
+            <div className="mailus">
+              <div className="about">Address</div>
+              <a href="" className="links">
+                Main market Molekhal (Kapradhya)
+              </a>
+              <a href="" className="links">
+                Near State Bank ,Salt Almora
+              </a>
+              <a href="" className="links">
+                Uttrakhand , 263676
+              </a>
+              <a href="" className="links">
+                India
+              </a>
             </div>
           </div>
+
           <div className="row" style={{ margin: 0 }}>
             <div className="container-fluid">
               <div className="seller">
                 <a href="#" style={{ color: "white" }}>
-                  {" "}
                   <IoBagHandleSharp
                     style={{ height: 20, width: 20, color: "yellow" }}
-                  />{" "}
-                  Become a Seller{" "}
+                  />
+                  Become a Seller
                 </a>
               </div>
               <div className="Help">
                 <a href="#" style={{ color: "white" }}>
-                  {" "}
                   <AiFillQuestionCircle
                     style={{ height: 20, width: 20, color: "yellow" }}
-                  />{" "}
+                  />
                   Help
                 </a>
               </div>
               <div className="">
                 <a href="#" style={{ color: "white" }}>
-                  {" "}
                   &copy;2020 - 2022 Aayakart
                 </a>
               </div>
