@@ -16,7 +16,7 @@ import { AiTwotoneStar } from "react-icons/ai";
 import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 import axios from "axios";
-
+import avita from "../images/avita.png";
 const Item = styled(Paper)(({ theme }) => ({
   backgroundColor: theme.palette.mode === "dark" ? "#1A2027" : "#fff",
   ...theme.typography.body2,
@@ -260,15 +260,19 @@ export default function BasicGrid() {
           <Item>
             <div className="mainproduct">
               <div className="cardd">
-                <img alt="img"></img>
-                <h3>Img details</h3>
+                <img src={avita} alt="img"></img>
+                <h3>Avita liber </h3>
                 <div className="btnss">
                   <button className="adc">Add to Cart</button>
                   <button className="btnbuy">Buy now</button>
                 </div>
               </div>
               <div className="cardd">
-                <img src={product.featured_image} alt="img" style={{height:150,width:150}}></img>
+                <img
+                  src={product.featured_image}
+                  alt="img"
+                  style={{ height: 150, width: 150 }}
+                ></img>
                 <h3>{product.title}</h3>
                 <div className="btnss">
                   <button className="adc">Add to Cart</button>
