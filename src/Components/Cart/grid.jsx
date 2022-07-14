@@ -137,7 +137,7 @@ export default function BasicGrid() {
               </Select>
             </FormControl>
           </Item>
-          <Item>
+          {/* <Item>
             <FormControl sx={{ m: 1, minWidth: 120 }} size="small">
               <InputLabel id="demo-multiple-chip-label">Stuff</InputLabel>
               <Select
@@ -167,7 +167,7 @@ export default function BasicGrid() {
                 ))}
               </Select>
             </FormControl>
-          </Item>
+          </Item> */}
           <Item>
             <FormControl sx={{ m: 1, minWidth: 120 }} size="small">
               <InputLabel id="demo-select-small">Item</InputLabel>
