@@ -50,7 +50,7 @@ const useStyle = makeStyles((theme) => ({
 export default function ActionItem() {
   const classes = useStyle();
 
-  const [product, setProduct] = useState([]);
+  const [product, setProduct] = useState([])+;
 
   // getting image from api
   const { slug } = useParams();
@@ -75,10 +75,10 @@ export default function ActionItem() {
   async function AddItemToCart() {
     await axios
       .post(`https://web.chatvait.com/api/cart/`, {
-        product_id: product_id,
-        price: price,
-        title: title,
-        featured_image: featured_image,
+        product_id: product._id,
+        price: product.sale_price,
+        title: product.title,
+        featured_image: product.featured_image,
       })
       .then((res) => {
         console(res.data);
