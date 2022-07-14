@@ -73,7 +73,7 @@ export default function Cart() {
   //   };
 
   const buyNow = async () => {
-    loadRazorpay(500);
+    
   };
 
   return (

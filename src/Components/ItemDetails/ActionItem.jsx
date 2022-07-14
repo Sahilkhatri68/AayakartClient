@@ -87,10 +87,16 @@ export default function ActionItem() {
       });
   }
 
-  const buyNow = async () => {
-    // loadRazorpay(600);
-    alert("item purchased");
-  };
+  const buyNow = axios
+    .post(`https://web.chatvait.com/api/orders`, {
+      product_id: product_id,
+      price: price,
+      title: title,
+      featured_image: featured_image,
+    })
+    .then((res) => {
+      console.log("Order Placed");
+    });
 
   return (
     <Box className={classes.leftContainer}>
