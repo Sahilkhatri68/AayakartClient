@@ -5,8 +5,6 @@
 .cardd {
   margin: 10px;
   width: 30%;
-  border: 1px solid rgba(58, 58, 58, 0.527);
-  border-radius: 10px;
 }
 .btnss {
   display: flex;
@@ -14,10 +12,10 @@
 }
 .adc {
   text-align: center;
-  width: 46%;
+  width: 35%;
   border: none;
   border-radius: 5px;
-  height: 50px;
+  height: 39px;
   background-color: #ff9f00;
   color: white;
   font-size: 17px;
