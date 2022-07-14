@@ -71,7 +71,7 @@ export default function ActionItem() {
   const [price, setPrice] = useState("");
   const [title, setTitle] = useState("");
   const [featured_image, setFeatured_image] = useState("");
-  
+
   async function AddItemToCart() {
     await axios
       .post(`https://web.chatvait.com/api/cart/`, {
@@ -111,7 +111,7 @@ export default function ActionItem() {
       <br />
       <div className="multiImage">{/* <img src=""></img> */}</div>
       <Button
-        onClick={() => AddItemToCart}
+        onClick={() => AddItemToCart()}
         className={clsx(classes.button, classes.addToCart)}
         style={{ marginRight: 10 }}
         variant="contained"
