@@ -58,7 +58,7 @@ export default function Profile() {
             />
             &nbsp; History
           </a>
-          <a href="#" target="_blank">
+          <a href="/" target="_blank">
             <FiPower
               style={{
                 height: 20,
