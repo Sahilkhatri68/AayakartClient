@@ -69,13 +69,11 @@ export default function ActionItem() {
   const [cart, setCart] = useState([]);
 
   async function AddItemToCart() {
-    await axios
-      .post(`https://web.chatvait.com/api/cart/${slug}`)
-      .then((res) => {
-        console.log(res.data);
-        setCart(res.data);
-        alert("Item added");
-      });
+    await axios.post(`https://web.chatvait.com/api/cart/`).then((res) => {
+      console.log(res.data);
+      setCart(res.data);
+      alert("Item added");
+    });
   }
 
   const buyNow = async () => {
@@ -92,9 +90,7 @@ export default function ActionItem() {
       />
 
       <br />
-      <div className="multiImage">
-        <img src=""></img>
-      </div>
+      <div className="multiImage">{/* <img src=""></img> */}</div>
       <Button
         onClick={() => AddItemToCart()}
         className={clsx(classes.button, classes.addToCart)}
