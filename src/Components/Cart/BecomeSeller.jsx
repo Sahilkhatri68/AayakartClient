@@ -12,7 +12,7 @@ export default function Seller() {
           <img className="bgbanner" src={bgbanner} alt="banner"></img>
         </div>
         <div className="midbanner">
-          <h1>Sell your product's here! & get money</h1>
+          <h1 className="sellhead">Sell your product's here! & get money</h1>
         </div>
         <div className="people">
           <Link to="/Enroll">

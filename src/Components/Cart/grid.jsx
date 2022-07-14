@@ -282,7 +282,6 @@ export default function BasicGrid() {
                   src={mac}
                   alt="img"
                   style={{ height: 100 }}
-                  alt="img"
                 ></img>
                 <h4>Mac computer</h4>
                 <div className="btnss">
