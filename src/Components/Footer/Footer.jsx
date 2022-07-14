@@ -42,7 +42,7 @@ export default function Footer() {
       </div>
       <footer>
         <div className="footer-wrap">
-          <div className="wrapper">
+          <div className="wrapperrr">
             <div className="content">
               <div className="about">About</div>
               <a href="" className="links">

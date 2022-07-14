@@ -246,7 +246,7 @@ footer li {
   color: white;
 }
 
-.wrapper {
+.wrapperrr {
   display: flex;
   margin-left: 65px;
   width: 90% !important;
@@ -308,7 +308,7 @@ footer li {
     width: 15%;
   }
 
-  .wrapper {
+  .wrapperrr {
     display: flex;
     margin-left: 65px;
     width: 100%;
@@ -328,7 +328,7 @@ footer li {
     color: white;
     width: 8%;
   }
-  .wrapper {
+  .wrapperrr {
     display: flex;
     margin-left: 35px;
     width: 100%;
@@ -361,7 +361,7 @@ footer li {
   }
 }
 @media (max-width: 750px) {
-  .wrapper {
+  .wrapperrr {
     display: block;
     width: 100%;
     margin: auto;
