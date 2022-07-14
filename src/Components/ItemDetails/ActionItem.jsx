@@ -87,17 +87,18 @@ export default function ActionItem() {
       });
   }
 
-  const buyNow = axios
-    .post(`https://web.chatvait.com/api/orders`, {
-      product_id: product_id,
-      price: price,
-      title: title,
-      featured_image: featured_image,
-    })
-    .then((res) => {
-      console.log("Order Placed");
-    });
-
+  async function BuyNow() {
+    await axios
+      .post(`https://web.chatvait.com/api/orders`, {
+        product_id: product_id,
+        price: price,
+        title: title,
+        featured_image: featured_image,
+      })
+      .then((res) => {
+        console.log("Order Placed");
+      });
+  }
   return (
     <Box className={classes.leftContainer}>
       <img
@@ -119,7 +120,7 @@ export default function ActionItem() {
         Add to Cart
       </Button>
       <Button
-        onClick={() => buyNow()}
+        onClick={() => BuyNow()}
         className={clsx(classes.button, classes.buyNow)}
         variant="contained"
       >
