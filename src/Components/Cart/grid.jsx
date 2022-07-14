@@ -18,6 +18,7 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import avita from "../images/avita.png";
 import asus from "../images/asus.png";
+import mac from "../images/imac2.png";
 const Item = styled(Paper)(({ theme }) => ({
   backgroundColor: theme.palette.mode === "dark" ? "#1A2027" : "#fff",
   ...theme.typography.body2,
@@ -277,8 +278,13 @@ export default function BasicGrid() {
                 </div>
               </div>
               <div className="cardd">
-                <img alt="img"></img>
-                <h3>Img details</h3>
+                <img
+                  src={mac}
+                  alt="img"
+                  style={{ height: 100 }}
+                  alt="img"
+                ></img>
+                <h4>Mac computer</h4>
                 <div className="btnss">
                   <button className="adc">Add to Cart</button>
                   <button className="btnbuy">Buy now</button>
