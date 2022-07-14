@@ -13,6 +13,7 @@ import Enroll from "./Components/Cart/Enrool";
 import Viewall from "./Components/Home/Viewall";
 import Profile from "./Components/Header/Profile";
 import BasicGrid from "./Components/Cart/grid";
+import ProfileSettings from "./Components/Header/ProfileSettings";
 
 function App() {
   return (
@@ -30,6 +31,7 @@ function App() {
               <Route exact path="/Enroll" component={Enroll}></Route>
               <Route exact path="/Viewall" component={BasicGrid}></Route>
               <Route exact path="/Profile" component={Profile}></Route>
+              <Route exact path="/ProfileSettings" component={ProfileSettings}></Route>
               <Route component={NotFound} />
             </Switch>
           </Box>

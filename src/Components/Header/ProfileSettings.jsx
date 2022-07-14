@@ -1,19 +1,18 @@
 import React from "react";
-import "./profile.css";
-import user from "../images/u3.png";
+import "./ProfileSettings.css";
+import user from "../images/setting.gif";
 import { FaShoppingBasket } from "react-icons/fa";
 import { MdOutlineSettings } from "react-icons/md";
 import { SiReadthedocs } from "react-icons/si";
 import { FiPower } from "react-icons/fi";
 import { Link } from "react-router-dom";
-
-export default function Profile() {
+export default function ProfileSettings() {
   return (
     <>
       <div className="nava">
         <input type="checkbox" id="nava-check" />
         <div className="nava-header">
-          <div className="nava-title">JoGeek</div>
+          <div className="nava-title">User</div>
         </div>
         <div className="nava-btn">
           <label htmlFor="nava-check">
@@ -23,7 +22,7 @@ export default function Profile() {
           </label>
         </div>
         <div className="nava-links">
-          <a href="//github.io/jo_geek" target="_blank">
+          <a href="/" target="_blank">
             <FaShoppingBasket
               style={{
                 height: 20,
@@ -31,10 +30,10 @@ export default function Profile() {
                 textAlign: "center",
                 alignItems: "center",
               }}
-            /> 
+            />{" "}
             &nbsp; My order
           </a>
-          <Link to="/ProfileSettings">
+          <Link to="/ProfileSettings" target="_blank">
             <MdOutlineSettings
               style={{
                 height: 20,
@@ -46,7 +45,7 @@ export default function Profile() {
             />
             &nbsp; Settings
           </Link>
-          <a href="http://stackoverflow.com/users/4084003/" target="_blank">
+          <a href="/" target="_blank">
             <SiReadthedocs
               style={{
                 height: 20,
@@ -58,7 +57,7 @@ export default function Profile() {
             />
             &nbsp; History
           </a>
-          <a href="http://stackoverflow.com/users/4084003/" target="_blank">
+          <a href="/" target="_blank">
             <FiPower
               style={{
                 height: 20,
@@ -85,11 +84,29 @@ export default function Profile() {
             </div>
           </div>
           <div className="insideuserdivRight">
-            <h3>User Name</h3>
-            <h3>Email</h3>
-            <h3>Address</h3>
-            <h3>Phone Number</h3>
-            <h3>Pin Code</h3>
+            <div className="settingsProfile">
+              <h3 className="headingUser">User Name</h3>
+              <input className="inputtt"></input>
+            </div>
+            <div className="settingsProfile">
+              <h3 className="headingUser">Email</h3>
+              <input className="inputtt"></input>
+            </div>
+            <div className="settingsProfile">
+              <h3 className="headingUser">Address</h3>
+              <input className="inputtt"></input>
+            </div>
+            <div className="settingsProfile">
+              <h3 className="headingUser">Phone Number</h3>
+              <input className="inputtt"></input>
+            </div>
+            <div className="settingsProfile">
+              <h3 className="headingUser">Pin Code</h3>
+              <input className="inputtt"></input>
+            </div>
+            <div className="settingsBtn">
+              <button className="changeBtn">Change</button>
+            </div>
           </div>
         </div>
       </div>
