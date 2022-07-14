@@ -13,6 +13,9 @@ import Chip from "@mui/material/Chip";
 import "./grid.css";
 import Slider from "@mui/material/Slider";
 import { AiTwotoneStar } from "react-icons/ai";
+import { useParams } from "react-router-dom";
+import { useState, useEffect } from "react";
+import axios from "axios";
 
 const Item = styled(Paper)(({ theme }) => ({
   backgroundColor: theme.palette.mode === "dark" ? "#1A2027" : "#fff",
@@ -66,6 +69,21 @@ export default function BasicGrid() {
     setAge(event.target.value);
   };
   // gender code end
+
+  // getting data form api----------------------------------------
+  const { slug } = useParams();
+
+  const [product, setProduct] = useState([]);
+
+  async function GetData() {
+    const res = await axios.get(`https://web.chatvait.com/api/products/`);
+    console.log(res.data);
+    setProduct(res.data);
+  }
+  useEffect(() => {
+    GetData();
+  }, []);
+  // data getting end-------------------------------
 
   // code of chip
   const theme = useTheme();
@@ -250,8 +268,8 @@ export default function BasicGrid() {
                 </div>
               </div>
               <div className="cardd">
-                <img alt="img"></img>
-                <h3>Img details</h3>
+                <img src={product.featured_image} alt="img" style={{height:150,width:150}}></img>
+                <h3>{product.title}</h3>
                 <div className="btnss">
                   <button className="adc">Add to Cart</button>
                   <button className="btnbuy">Buy now</button>
