@@ -67,13 +67,24 @@ export default function ActionItem() {
 
   // posting item to cart
   const [cart, setCart] = useState([]);
+  const [product_id, setProduct_id] = useState("");
+  const [price, setPrice] = useState("");
+  const [title, setTitle] = useState("");
+  const [featured_image, setFeatured_image] = useState("");
 
   async function AddItemToCart() {
-    await axios.post(`https://web.chatvait.com/api/cart/`).then((res) => {
-      console.log(res.data);
-      setCart(res.data);
-      alert("Item added");
-    });
+    await axios
+      .post(`https://web.chatvait.com/api/cart/`, {
+        product_id: product_id,
+        price: price,
+        title: title,
+        featured_image: featured_image,
+      })
+      .then((res) => {
+        console(res.data);
+        setCart(res.data);
+        alert("Item added");
+      });
   }
 
   const buyNow = async () => {
@@ -87,6 +98,7 @@ export default function ActionItem() {
         src={product.featured_image}
         className={classes.productImage}
         alt="featured imagess form api"
+        onChange={(e) => setFeatured_image(e.target.value)}
       />
 
       <br />
