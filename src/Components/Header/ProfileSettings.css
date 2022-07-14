@@ -215,3 +215,8 @@ body {
     margin-top: 10px;
   }
 }
+@media (max-width: 450px) {
+  .headingUser {
+    font-size: 13px;
+  }
+}
