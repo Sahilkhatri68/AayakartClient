@@ -10669,6 +10669,7 @@ textarea.form-control {
 
 .wrapper {
   width: 100%;
+  display: block;
 }
 
 .contact-wrap {
