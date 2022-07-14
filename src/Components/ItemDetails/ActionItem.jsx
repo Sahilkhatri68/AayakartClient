@@ -50,7 +50,7 @@ const useStyle = makeStyles((theme) => ({
 export default function ActionItem() {
   const classes = useStyle();
 
-  const [product, setProduct] = useState([])+;
+  const [product, setProduct] = useState([]);
 
   // getting image from api
   const { slug } = useParams();
