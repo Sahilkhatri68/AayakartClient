@@ -23,7 +23,7 @@ export default function Profile() {
           </label>
         </div>
         <div className="nava-links">
-          <a href="//github.io/jo_geek" target="_blank">
+          <a href="#" target="_blank">
             <FaShoppingBasket
               style={{
                 height: 20,
@@ -31,7 +31,7 @@ export default function Profile() {
                 textAlign: "center",
                 alignItems: "center",
               }}
-            /> 
+            />
             &nbsp; My order
           </a>
           <Link to="/ProfileSettings">
@@ -46,7 +46,7 @@ export default function Profile() {
             />
             &nbsp; Settings
           </Link>
-          <a href="http://stackoverflow.com/users/4084003/" target="_blank">
+          <a href="#" target="_blank">
             <SiReadthedocs
               style={{
                 height: 20,
@@ -58,7 +58,7 @@ export default function Profile() {
             />
             &nbsp; History
           </a>
-          <a href="http://stackoverflow.com/users/4084003/" target="_blank">
+          <a href="#" target="_blank">
             <FiPower
               style={{
                 height: 20,
