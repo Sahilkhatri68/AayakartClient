@@ -77,7 +77,7 @@ export default function DetailView() {
   }, []);
 
   return (
-    <Box className={classes.component} style={{ padding: 15}}>
+    <Box className={classes.component} style={{ padding: 15 }}>
       <Box></Box>
       {product && Object.keys(product).length && (
         <Grid container className={classes.container}>
@@ -92,7 +92,7 @@ export default function DetailView() {
             xs={12}
             className={classes.rightContainer}
           >
-            <Typography>{product.title.longTitle}</Typography>
+            <Typography>{product.title}</Typography>
             <Typography
               className={clsx(classes.greyTextColor, classes.smallText)}
               style={{ marginTop: 5 }}
