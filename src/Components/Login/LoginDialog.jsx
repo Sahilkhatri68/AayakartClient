@@ -159,7 +159,7 @@ const LoginDialog = ({ open, setOpen, setAccount }) => {
 
   const postdata = () => {
     axios
-      .post("https://web.chatvait.com/api/register", {
+      .post("${process.env.REACT_APP_BACKEND_URL}/api/register", {
         fname: fullname,
         username: username,
         phone: phone_number,
@@ -173,7 +173,7 @@ const LoginDialog = ({ open, setOpen, setAccount }) => {
   };
   const UserLogin = () => {
     axios
-      .post("https://web.chatvait.com/api/login", {
+      .post("${process.env.REACT_APP_BACKEND_URL}/api/login", {
         username: username,
         password: password,
       })

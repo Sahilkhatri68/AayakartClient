@@ -10,7 +10,7 @@ import FormControl from "@mui/material/FormControl";
 import Select from "@mui/material/Select";
 import Slider from "@mui/material/Slider";
 import Box from "@mui/material/Box";
-import { ExpandMore } from "@material-ui/icons";
+import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import { useState } from "react";
 import Grid from "@mui/material/Grid";
 import { styled } from "@mui/material/styles";

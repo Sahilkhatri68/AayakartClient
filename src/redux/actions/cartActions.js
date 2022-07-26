@@ -4,7 +4,7 @@ import axios from "axios";
 export const addToCart = (slug, quantity) => async (dispatch, getState) => {
   try {
     const { data } = await axios.get(
-      `https://web.chatvait.com/products/slug/${slug}`
+      `${process.env.REACT_APP_BACKEND_URL}/products/slug/${slug}`
     );
 
     dispatch({ type: actionTypes.ADD_TO_CART, payload: { ...data, quantity } });

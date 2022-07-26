@@ -1,6 +1,6 @@
 import { useState, useContext, useReducer, useEffect } from "react";
 import { Button, Box, makeStyles } from "@material-ui/core";
-import { ShoppingCart as Cart, FlashOn as Flash } from "@material-ui/icons";
+import { ShoppingCart as Cart, FlashOn as Flash } from "@mui/icons-material/";
 import clsx from "clsx";
 import { useHistory, useParams } from "react-router-dom";
 import { LoginContext } from "../../context/ContextProvider";
@@ -56,7 +56,7 @@ export default function ActionItem() {
   const { slug } = useParams();
   async function GetData() {
     const res = await axios.get(
-      `https://web.chatvait.com/api/products/slug/${slug}`
+      `${process.env.REACT_APP_BACKEND_URL}/api/products/slug/${slug}`
     );
     console.log(res.data);
     setProduct(res.data);
@@ -74,7 +74,7 @@ export default function ActionItem() {
 
   async function AddItemToCart() {
     await axios
-      .post(`https://web.chatvait.com/api/cart/`, {
+      .post(`${process.env.REACT_APP_BACKEND_URL}/api/cart/`, {
         product_id: product._id,
         price: product.sale_price,
         title: product.title,
@@ -89,7 +89,7 @@ export default function ActionItem() {
 
   async function BuyNow() {
     await axios
-      .post(`https://web.chatvait.com/api/orders`, {
+      .post(`${process.env.REACT_APP_BACKEND_URL}/api/orders`, {
         product_id: product_id,
         price: price,
         title: title,

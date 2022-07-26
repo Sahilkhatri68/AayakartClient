@@ -66,7 +66,7 @@ export default function DetailView() {
   const [product, setProduct] = useState([]);
   async function GetData() {
     const res = await axios.get(
-      `https://web.chatvait.com/api/products/slug/${slug}`
+      `${process.env.REACT_APP_BACKEND_URL}/api/products/slug/${slug}`
     );
     console.log(res.data);
     setProduct(res.data);

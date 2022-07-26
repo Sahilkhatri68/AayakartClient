@@ -1,7 +1,7 @@
 import React, { useState, useContext } from "react";
 import { makeStyles, Box, Typography, Badge, Button } from "@material-ui/core";
 import { Link } from "react-router-dom";
-import { ShoppingCart } from "@material-ui/icons";
+import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import LoginDialog from "../Login/LoginDialog";
 import { LoginContext } from "../../context/ContextProvider";
 import { useSelector } from "react-redux";
@@ -97,11 +97,11 @@ const CustomButtons = () => {
       </Link>
       <Link to="/cart" className={classes.container}>
         <Badge badgeContent={cartItems?.length} style={{ color: "black" }}>
-          <ShoppingCart />
+          <ShoppingCartIcon />
         </Badge>
         <Typography style={{ marginLeft: 5, color: "black" }}>Cart</Typography>
       </Link>
-      <Link to="/Profile" className={classes.container}>
+      <Link to="/staffprofile" className={classes.container}>
         <Badge badgeContent={cartItems?.length} style={{ color: "black" }}>
           <PersonIcon />
         </Badge>

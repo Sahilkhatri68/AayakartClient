@@ -12,7 +12,7 @@ import {
 import { Link } from "react-router-dom";
 import CustomButtons from "./CustomButtons";
 import Search from "./Search";
-import { Menu } from "@material-ui/icons";
+import MenuIcon from "@mui/icons-material/Menu";
 import { useState } from "react";
 import logoURL from "../images/AayakartLogo.png";
 const useStyle = makeStyles((theme) => ({
@@ -104,7 +104,7 @@ const Header = () => {
           className={classes.menuButton}
           onClick={handleOpen}
         >
-          <Menu />
+          <MenuIcon />
         </IconButton>
 
         <Drawer open={open} onClose={handleClose}>

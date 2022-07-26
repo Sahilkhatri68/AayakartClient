@@ -7,7 +7,7 @@ export const getProducts = () => async (dispatch) => {
     const { data } = await axios.get(`https://web.chatvait.com/api/products`);
     dispatch({ type: actionTypes.GET_PRODUCTS_SUCCESS, payload: data });
   } catch (error) {
-    dispatch({ type: actionTypes.GET_PRODUCTS_FAIL, payload: error.response });
+    // dispatch({ type: actionTypes.GET_PRODUCTS_FAIL, payload: error.response });
   }
 };
 
