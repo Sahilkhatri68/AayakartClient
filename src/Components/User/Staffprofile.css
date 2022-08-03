@@ -1,0 +1,179 @@
+.mainuserprop {
+  padding: 80px;
+  max-width: 1200px !important;
+  margin: auto !important;
+}
+.outeruserprop {
+  display: flex;
+}
+.leftuserprop {
+  width: 20%;
+  margin: auto;
+}
+.rightuserprop {
+  width: 80%;
+}
+.userporpimg {
+  width: 100%;
+}
+.userpropright {
+  margin-left: 20px;
+  color: #435564;
+}
+.ratingprop {
+  margin-top: 25px;
+}
+.userlocaprop {
+  display: flex;
+  align-items: center;
+}
+.lociconprop {
+  font-size: 20px;
+}
+.emptysapceprop {
+  width: 50px;
+}
+.bottomuserprop {
+  margin-top: 30px;
+}
+.bottomleftprop {
+  width: 20%;
+}
+.paraprop {
+  color: blue;
+  font-weight: 500;
+  font-size: 19px;
+}
+.RIcons {
+  font-size: 20px;
+}
+.bottomuserprop {
+  display: flex;
+}
+.bottomrightprop {
+  width: 80%;
+}
+.infoprop {
+  display: flex;
+}
+.rightinofprop {
+  margin-left: 40px;
+  color: blue;
+  font-weight: 600;
+}
+.accprop {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 30px;
+}
+.pribtn {
+  border: none;
+  background-color: #e3f2fd;
+  color: #4d97f3;
+  width: 100px;
+  height: 29px;
+  font-size: 18px;
+  border-radius: 3px;
+}
+.ppropbtm {
+  margin: 0px;
+  padding: 0px;
+}
+.lowercontprop {
+  margin-top: 30px;
+}
+.hrinfo {
+  margin: 0px;
+  padding: 0px;
+}
+.hsixinfo {
+  color: #435564;
+}
+.skilldiv {
+  margin-top: 20px;
+}
+.skillparainfo {
+  margin: 0px;
+  padding: 0px;
+}
+.threebtns {
+  margin-top: 28px;
+  display: flex;
+}
+.sendmsgbtn {
+  border: none;
+  background: transparent;
+  color: #435564;
+  cursor: pointer;
+}
+.contbtnprop {
+  border: none;
+  background-color: #e3f2fd;
+  color: #4d97f3;
+  width: 120px;
+  height: 29px;
+  font-size: 18px;
+  border-radius: 3px;
+}
+.parentbtndivprop {
+  margin-right: 15px;
+}
+.aboutsecrtion {
+  margin-top: 10px;
+  font-size: 18px;
+  display: flex;
+}
+.propabout {
+  margin-left: 10px;
+}
+.cinfoprop {
+  color: #435564;
+  margin-bottom: 30px;
+}
+.leftinfoprop {
+  margin-bottom: 15px;
+}
+.headingcontinfo {
+  color: #435564;
+  font-weight: 600;
+  font-size: 18px;
+}
+
+.basicinfodiv {
+  margin-top: 75px;
+  margin-bottom: 30px;
+  color: #435564;
+}
+@media (max-width: 1100px) {
+  .mainuserprop {
+    padding: 60px;
+  }
+}
+@media (max-width: 875px) {
+  .mainuserprop {
+    padding: 30px;
+    margin: auto;
+  }
+}
+@media (max-width: 750px) {
+  .mainuserprop {
+    padding: 30px;
+    margin: auto;
+  }
+  .outeruserprop {
+    display: block;
+  }
+  .userprophead {
+    text-align: left;
+    margin-top: 25px;
+  }
+  .bottomuserprop {
+    display: block;
+  }
+   .leftuserprop{
+    width: 50%;
+   }
+   .bottomleftprop{
+    width: 100%;
+   }
+}

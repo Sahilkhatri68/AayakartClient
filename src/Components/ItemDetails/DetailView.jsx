@@ -66,7 +66,7 @@ export default function DetailView() {
   const [product, setProduct] = useState([]);
   async function GetData() {
     const res = await axios.get(
-      `${process.env.REACT_APP_BACKEND_URL}/api/products/slug/${slug}`
+      `http://localhost:4000/api/products/slug/${slug}`
     );
     console.log(res.data);
     setProduct(res.data);

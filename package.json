@@ -25,10 +25,12 @@
     "react-redux": "^7.2.4",
     "react-router-dom": "^5.2.0",
     "react-scripts": "4.0.3",
+    "react-simple-image-slider": "^2.4.1",
     "redux": "^4.1.0",
     "redux-devtools-extension": "^2.13.9",
     "redux-thunk": "^2.3.0",
-    "sweetalert2": "^11.4.20",
+    "slugify": "^1.6.5",
+    "sweetalert2": "^11.4.24",
     "web-vitals": "^1.1.2"
   },
   "scripts": {

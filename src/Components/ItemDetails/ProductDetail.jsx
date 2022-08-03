@@ -8,7 +8,7 @@ import {
   TableCell,
 } from "@material-ui/core";
 // import { LocalOffer  } from "@material-ui/icons";
-import {LocalOfferIcon as Badge }from "@mui/icons-material/LocalOffer";
+import { LocalOfferIcon as Badge } from "@mui/icons-material/LocalOffer";
 import axios from "axios";
 import { useEffect } from "react";
 import { useState } from "react";
@@ -48,7 +48,7 @@ export default function ProductDetail() {
 
   async function GetData() {
     const res = await axios.get(
-      `${process.env.REACT_APP_BACKEND_URL}/api/products/slug/${slug}`
+      `http://localhost:4000/api/products/slug/${slug}`
     );
     console.log(res.data);
     setProduct(res.data);

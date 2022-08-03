@@ -14,8 +14,17 @@ import Viewall from "./Components/Home/Viewall";
 import Profile from "./Components/Header/Profile";
 import BasicGrid from "./Components/Cart/grid";
 import ProfileSettings from "./Components/Header/ProfileSettings";
-import StaffProfile from "./Components/Header/StaffProfile";
-import StaffEditProfile from "./Components/Header/StaffEditprofile";
+import StaffEditProfile from "./Components/User/StaffEditprofile";
+import ViewProduct from "./Components/User/ViewProduct";
+import StaffProfile from "./Components/User/StaffProfile";
+import Addproduct from "./Components/User/Addproduct";
+import NewProduct from "./Components/User/Createproduct";
+import StaffEditProduct from "./Components/User/StaffEditProduct";
+import axios from "axios";
+
+// credentials of axios--------------------
+axios.defaults.withCredentials = true;
+// credentials of axios--------------------
 
 function App() {
   return (
@@ -26,16 +35,33 @@ function App() {
           <Box style={{ marginTop: 54 }}>
             <Switch>
               <Route exact path="/" component={Home} />
+
               <Route exact path="/cart" component={Cart} />
-              <Route exact path="/product/:slug" component={DetailView} />
+              <Route exact path="/products/:slug" component={DetailView} />
               <Route exact path="/seller" component={Seller}></Route>
               <Route exact path="/Appsoon" component={Appsoon}></Route>
               <Route exact path="/Enroll" component={Enroll}></Route>
+              <Route
+                exact
+                path="/stafeditprod/product/:slug"
+                component={StaffEditProduct}
+              ></Route>
               <Route exact path="/Viewall" component={BasicGrid}></Route>
               <Route exact path="/Profile" component={Profile}></Route>
+              <Route exact path="/addproduct" component={Addproduct}></Route>
+              <Route exact path="/addnewproduct" component={NewProduct}></Route>
               {/* <Route exact path="/ProfileSettings" component={ProfileSettings}></Route> */}
-              <Route exact path="/staffprofile" component={StaffProfile}></Route>
-              <Route exact path="/staffeditprofile" component={StaffEditProfile}></Route>
+              <Route
+                exact
+                path="/staffprofile"
+                component={StaffProfile}
+              ></Route>
+              <Route
+                exact
+                path="/staffeditprofile"
+                component={StaffEditProfile}
+              ></Route>
+              <Route exact path="/viewproduct" component={ViewProduct}></Route>
               <Route component={NotFound} />
             </Switch>
           </Box>

@@ -10,6 +10,7 @@ import {
 } from "@material-ui/core";
 import { authenticateLogin, authenticateSignup } from "../../service/api";
 import axios from "axios";
+import Swal from "sweetalert2";
 
 const useStyle = makeStyles({
   component: {
@@ -156,27 +157,40 @@ const LoginDialog = ({ open, setOpen, setAccount }) => {
   const [password, setPassword] = useState("");
   const [confirmpassword, setconfirmpassword] = useState("");
   const [phone_number, setphone_number] = useState("");
-
+  const [location, setLocation] = useState("");
+  // swal fire
   const postdata = () => {
     axios
-      .post("${process.env.REACT_APP_BACKEND_URL}/api/register", {
-        fname: fullname,
+      .post("http://localhost:4000/api/register", {
+        fullName: fullname,
         username: username,
-        phone: phone_number,
+        phone_number: phone_number,
         password: password,
-        confirmPassword: password,
+        confirmPassword: confirmpassword,
         email: email,
+        location: location,
       })
-      .then(() => {
-        alert("data posted");
+      .then(function (response) {
+        console.log(response);
+      })
+      .catch(function (error) {
+        console.log(error);
+        alert("User Already Exist / Missing Details");
       });
   };
+
   const UserLogin = () => {
     axios
-      .post("${process.env.REACT_APP_BACKEND_URL}/api/login", {
-        username: username,
-        password: password,
-      })
+      .post(
+        `http://localhost:4000/api/login`,
+        {
+          username: username,
+          password: password,
+        },
+        {
+          withCredentials: true,
+        }
+      )
 
       .then(() => {
         alert("Successfuly loged in ");
@@ -273,6 +287,11 @@ const LoginDialog = ({ open, setOpen, setAccount }) => {
                 onChange={(e) => setphone_number(e.target.value)}
                 name={phone_number}
                 label="Enter Phone_no"
+              />
+              <TextField
+                onChange={(e) => setLocation(e.target.value)}
+                name={location}
+                label="Enter Location"
               />
               <Button className={classes.loginbtn} onClick={() => postdata()}>
                 Continue

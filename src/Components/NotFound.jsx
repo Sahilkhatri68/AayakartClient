@@ -6,7 +6,7 @@ const NotFound = () => {
     <>
       <h1 style={{ textAlign: "center" }}>Page not found</h1>
 
-      <div class="main">
+      <div class="mainn">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           xlink="http://www.w3.org/1999/xlink"

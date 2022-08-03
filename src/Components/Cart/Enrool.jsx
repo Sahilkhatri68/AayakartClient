@@ -1,7 +1,52 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import axios from "axios";
 import "./Enroll.css";
 import Alogo from "../images/ayakartLogo.png";
+import Swal from "sweetalert2";
 export default function Enroll() {
+  const handleSubmit = (event) => {
+    event.preventDefault();
+
+    console.log("form submitted ✅");
+  };
+
+  const [fullname, setFullname] = useState("");
+  const [username, setusername] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [confirmpassword, setconfirmpassword] = useState("");
+  const [phone_number, setphone_number] = useState("");
+  const [location, setLocation] = useState("");
+  const postdata = () => {
+    axios
+      .post("http://localhost:4000/api/register", {
+        fullName: fullname,
+        username: username,
+        phone_number: phone_number,
+        password: password,
+        confirmPassword: confirmpassword,
+        email: email,
+        location: location,
+      })
+      .then(function (response) {
+        console.log(response);
+        // alert("Vendor Id Created Successfuly");
+        Swal.fire({
+          icon: "success",
+          title: "Good Job!",
+          text: "Vendor Account created",
+        });
+      })
+      .catch(function (error) {
+        console.log(error);
+        // alert("User Already Exist / Missing Details");
+        Swal.fire({
+          icon: "error",
+          title: "Details Missing  / User Already Exists",
+          text: "Something went wrong!",
+        });
+      });
+  };
   return (
     <>
       <section className="ftco-section">
@@ -82,10 +127,10 @@ export default function Enroll() {
                         Your message was sent, thank you!
                       </div>
                       <form
-                        method="POST"
                         id="contactForm"
                         name="contactForm"
                         className="contactForm"
+                        onSubmit={handleSubmit}
                       >
                         <div className="row">
                           <div className="col-md-6">
@@ -96,9 +141,25 @@ export default function Enroll() {
                               <input
                                 type="text"
                                 className="form-control"
-                                name="name"
+                                name={fullname}
                                 id="name"
                                 placeholder="Name"
+                                onChange={(e) => setFullname(e.target.value)}
+                              />
+                            </div>
+                          </div>
+                          <div className="col-md-6">
+                            <div className="form-group">
+                              <label className="label" htmlFor="name">
+                                UserName
+                              </label>
+                              <input
+                                type="text"
+                                className="form-control"
+                                id="username"
+                                placeholder="username"
+                                onChange={(e) => setusername(e.target.value)}
+                                name={username}
                               />
                             </div>
                           </div>
@@ -110,7 +171,8 @@ export default function Enroll() {
                               <input
                                 type="email"
                                 className="form-control"
-                                name="email"
+                                onChange={(e) => setEmail(e.target.value)}
+                                name={email}
                                 id="email"
                                 placeholder="Email"
                               />
@@ -119,54 +181,76 @@ export default function Enroll() {
                           <div className="col-md-6">
                             <div className="form-group">
                               <label className="label" htmlFor="email">
+                                City
+                              </label>
+                              <input
+                                type="text"
+                                className="form-control"
+                                onChange={(e) => setLocation(e.target.value)}
+                                name={location}
+                                id="City"
+                                placeholder="City"
+                              />
+                            </div>
+                          </div>
+                          <div className="col-md-6">
+                            <div className="form-group">
+                              <label className="label" htmlFor="password">
                                 Password
                               </label>
                               <input
                                 type="password"
                                 className="form-control"
-                                name="password"
-                                id="email"
+                                onChange={(e) => setPassword(e.target.value)}
+                                name={password}
+                                id="password"
                                 placeholder="password"
+                              />
+                            </div>
+                          </div>
+                          <div className="col-md-6">
+                            <div className="form-group">
+                              <label className="label" htmlFor="password">
+                                Confirm Password
+                              </label>
+                              <input
+                                type="password"
+                                className="form-control"
+                                onChange={(e) =>
+                                  setconfirmpassword(e.target.value)
+                                }
+                                name={confirmpassword}
+                                id="password"
+                                placeholder="Re-Enter-password"
                               />
                             </div>
                           </div>
                           <div className="col-md-12">
                             <div className="form-group">
                               <label className="label" htmlFor="subject">
-                                City
+                                Phone Number
                               </label>
                               <input
                                 type="text"
                                 className="form-control"
-                                name="subject"
                                 id="subject"
-                                placeholder="Subject"
+                                placeholder="Phone"
+                                onChange={(e) =>
+                                  setphone_number(e.target.value)
+                                }
+                                name={phone_number}
                               />
                             </div>
                           </div>
+
                           <div className="col-md-12">
                             <div className="form-group">
-                              <label className="label" htmlFor="#">
-                                Phone Number
-                              </label>
-                              <textarea
-                                name="message"
-                                className="form-control"
-                                id="message"
-                                cols={30}
-                                rows={4}
-                                placeholder="Number"
-                                defaultValue={""}
-                              />
-                            </div>
-                          </div>
-                          <div className="col-md-12">
-                            <div className="form-group">
-                              <input
-                                type="submit"
-                                defaultValue="Send Message"
+                              <button
                                 className="btn btn-primary"
-                              />
+                                onClick={() => postdata()}
+                              >
+                                Submit
+                              </button>
                               <div className="submitting" />
                             </div>
                           </div>
@@ -176,11 +260,7 @@ export default function Enroll() {
                   </div>
                   <div className="col-md-5 d-flex align-items-stretch">
                     <div className="info-wrap w-100 p-5 img">
-                      <img
-                      className="Alogos"
-                        src={Alogo}
-                        alt="Alogo"
-                      ></img>
+                      <img className="Alogos" src={Alogo} alt="Alogo"></img>
                     </div>
                   </div>
                 </div>

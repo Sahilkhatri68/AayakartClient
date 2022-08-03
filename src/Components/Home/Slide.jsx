@@ -9,7 +9,7 @@ import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import Countdown from "react-countdown";
 import { Link } from "react-router-dom";
-
+import { BiRupee } from "react-icons/bi";
 const responsive = {
   desktop: {
     breakpoint: { max: 3000, min: 1024 },
@@ -142,7 +142,8 @@ const MultiSlide = ({ data, timer, title }) => {
                 className={classes.text}
                 style={{ color: "red", opacity: ".8" }}
               >
-                ${temp.sale_price}
+                <BiRupee />
+                {temp.sale_price}
               </Typography>
             </Box>
           </Link>

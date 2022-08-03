@@ -1,0 +1,13 @@
+/* .gridresp{
+    display: block;
+} */
+
+@media (max-width: 750px) {
+  .insideformgrid {
+    display: block;
+  }
+  .responsdiv {
+    width: 100%;
+    margin: auto;
+  }
+}

@@ -1,9 +1,31 @@
 import React from "react";
 import "./Staffprofile.css";
 import { Link } from "react-router-dom";
-import { FiPower } from "react-icons/fi";
+import Stack from "@mui/material/Stack";
+import Button from "@mui/material/Button";
+import Snackbar from "@mui/material/Snackbar";
+import MuiAlert from "@mui/material/Alert";
 
-export default function StaffProfile() {
+// snackbar
+const Alert = React.forwardRef(function Alert(props, ref) {
+  return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
+});
+
+export default function StaffEditProfile() {
+  // snackbar
+  const [open, setOpen] = React.useState(false);
+
+  const handleClick = () => {
+    setOpen(true);
+  };
+
+  const handleClose = (event, reason) => {
+    if (reason === "clickaway") {
+      return;
+    }
+
+    setOpen(false);
+  };
   return (
     <>
       <div className="container emp-profile">
@@ -15,10 +37,10 @@ export default function StaffProfile() {
                   src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS52y5aInsxSm31CvHOFHWujqUx_wWTS9iM6s7BAm21oEN_RiGoog"
                   alt=""
                 />
-                {/* <div className="file btn btn-lg btn-primary">
+                <div className="file btn btn-lg btn-primary">
                   Change Photo
                   <input type="file" name="file" />
-                </div> */}
+                </div>
               </div>
             </div>
             <div className="col-md-6">
@@ -42,57 +64,15 @@ export default function StaffProfile() {
                 </ul>
               </div>
             </div>
-            <div
-              className="col-md-2"
-              style={{ display: "flex", justifyContent: "space-between" }}
-            >
-              <Link to="/staffeditprofile">
-                <button
-                  className="Ebtn"
-                  style={{
-                    background: "blue",
-                    color: "white",
-                    textAlign: "center",
-                    padding: 4,
-                    width: 80,
-                    marginRight:4
-                  }}
-                >
-                  Edit
-                </button>
-              </Link>
-              <Link to="/">
-                <button
-                  className="Ebtn"
-                  style={{
-                    background: "red",
-                    color: "white",
-                    textAlign: "center",
-                    padding: 4,
-                    width: 80,
-                  }}
-                >
-                  <FiPower style={{ color: "white", fontWight: 600 }} /> Logout
-                </button>
-              </Link>
+            <div className="col-md-2">
+              {/* <Link to="/editprofile">
+                <button className="Ebtn">Edit</button>
+              </Link> */}
             </div>
           </div>
           <div className="row">
             <div className="col-md-4">
               <div className="profile-work">
-                <h3>Accessibilities</h3>
-                <Link to="/addproduct">Add Product's</Link>
-                <br />
-                <Link to="/viewproduct">View Product</Link>
-
-                <br />
-                <Link to="/addauction">Add Auction</Link>
-                <br />
-                <Link to="/viewauction">View Auction</Link>
-                <br />
-                <Link to="/adduser">Add User</Link>
-                <br />
-                <Link to="/viewuser">View User's</Link>
                 <br />
               </div>
             </div>
@@ -109,7 +89,7 @@ export default function StaffProfile() {
                       <label>User Id</label>
                     </div>
                     <div className="col-md-6">
-                      <p>Kshiti123</p>
+                      <input style={{ padding: 3, marginBottom: 5 }}></input>
                     </div>
                   </div>
                   <div className="row">
@@ -117,7 +97,7 @@ export default function StaffProfile() {
                       <label>Name</label>
                     </div>
                     <div className="col-md-6">
-                      <p>Kshiti Ghelani</p>
+                      <input style={{ padding: 3, marginBottom: 5 }}></input>
                     </div>
                   </div>
                   <div className="row">
@@ -125,7 +105,7 @@ export default function StaffProfile() {
                       <label>Email</label>
                     </div>
                     <div className="col-md-6">
-                      <p>kshitighelani@gmail.com</p>
+                      <input style={{ padding: 3, marginBottom: 5 }}></input>
                     </div>
                   </div>
                   <div className="row">
@@ -133,7 +113,7 @@ export default function StaffProfile() {
                       <label>Phone</label>
                     </div>
                     <div className="col-md-6">
-                      <p>123 456 7890</p>
+                      <input style={{ padding: 3, marginBottom: 5 }}></input>
                     </div>
                   </div>
                   <div className="row">
@@ -141,7 +121,23 @@ export default function StaffProfile() {
                       <label>Profession</label>
                     </div>
                     <div className="col-md-6">
-                      <p>Web Developer and Designer</p>
+                      <input style={{ padding: 3, marginBottom: 5 }}></input>
+                    </div>
+                    <div
+                      className="col-md-6 "
+                      style={{ textAlign: "right", marginTop: 20 }}
+                    >
+                      <button
+                        style={{
+                          border: "none",
+                          color: "white",
+                          background: "gray",
+                          fontSize: "18px",
+                          backgroundColor: "#2874f0",
+                        }}
+                      >
+                        Save
+                      </button>
                     </div>
                   </div>
                 </div>
