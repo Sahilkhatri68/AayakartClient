@@ -1,14 +1,19 @@
 import { useState, useEffect } from "react";
 import { Box, Typography, makeStyles, Grid } from "@material-ui/core";
-import ProductDetail from "./ProductDetail";
-import ActionItem from "./ActionItem";
 import { useParams } from "react-router-dom";
 import clsx from "clsx";
 import { getProductById } from "../../service/api";
 // import { useDispatch, useSelector } from "react-redux";
-
+import "./detailview.css";
 // import { getProductDetails } from "../../redux/actions/productActions";
 import axios from "axios";
+import { BiRupee } from "react-icons/bi";
+import { AiTwotoneStar } from "react-icons/ai";
+import { TbBadge } from "react-icons/tb";
+import LoyaltyIcon from "@mui/icons-material/Loyalty";
+import { BsCart3 } from "react-icons/bs";
+import { GiElectric } from "react-icons/gi";
+import { Link } from "react-router-dom";
 
 const useStyles = makeStyles((theme) => ({
   component: {
@@ -64,63 +69,109 @@ export default function DetailView() {
 
   // getting data
   const [product, setProduct] = useState([]);
-  async function GetData() {
-    const res = await axios.get(
-      `http://localhost:4000/api/products/slug/${slug}`
-    );
-    console.log(res.data);
-    setProduct(res.data);
-    console.log(res.data);
+  async function GetProduct() {
+    const response = await axios
+      .get(`http://localhost:4000/api/products/slug/${slug}`)
+      .then((response) => {
+        setProduct(response.data);
+        console.log(response.data);
+      });
   }
   useEffect(() => {
-    GetData();
+    GetProduct();
   }, []);
 
+  // addtocart post request
+  const [user_id, setUser_id] = useState("");
+  const [product_id, setProduct_id] = useState("");
+  const [price, setPrice] = useState("");
+  const [title, setTitle] = useState("");
+  const [featured_image, setFeatured_image] = useState("");
+
+  async function AddtoCart() {
+    const resp = await axios
+      .post(`http://localhost:4000/api/cart/`, {
+        user_id: user_id,
+        product_id: product_id,
+        quantity: 1,
+        price: price,
+        product_name: title,
+        product_image: featured_image,
+      })
+      .then(function (resp) {
+        console.log(resp);
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
+  }
   return (
-    <Box className={classes.component} style={{ padding: 15 }}>
-      <Box></Box>
-      {product && Object.keys(product).length && (
-        <Grid container className={classes.container}>
-          <Grid item lg={4} md={4} sm={8} xs={12}>
-            <ActionItem product={product} />
-          </Grid>
-          <Grid
-            item
-            lg={8}
-            md={8}
-            sm={8}
-            xs={12}
-            className={classes.rightContainer}
-          >
-            <Typography>{product.title}</Typography>
-            <Typography
-              className={clsx(classes.greyTextColor, classes.smallText)}
-              style={{ marginTop: 5 }}
+    <div className="mainproview">
+      <div className="contproview">
+        <div className="imgproview">
+          <img className="proimgdiv" src={product.featured_image}></img>
+          <div className="mainbtnpru">
+            <button
+              size="small"
+              onClick={() => AddtoCart(`${product.slug}`)}
+              className="cartbtndivone"
             >
-              8 Ratings & 1 Reviews
-              {/* <span>
-                <img
-                  src={fassured}
-                  style={{ width: 77, marginLeft: 20 }}
-                  alt=""
-                />
-              </span> */}
-            </Typography>
-            <Typography>
-              <span className={classes.sale_price}>
-                ₹{product.regular_price}
-              </span>
-              &nbsp;&nbsp;&nbsp;
-              {/* <span className={classes.greyTextColor}>
-                <strike>₹{product.price.mrp}</strike>
-              </span> */}
-              &nbsp;&nbsp;&nbsp;
-              <span style={{ color: "#388E3C" }}>{product.status} </span>
-            </Typography>
-            <ProductDetail product={product} />
-          </Grid>
-        </Grid>
-      )}
-    </Box>
+              <div className="reacticonsdiv">
+                <BsCart3 />
+              </div>
+              <div className="btntext"> Add to cart</div>
+            </button>
+
+            <button size="small" className="buybtndivtow">
+              <div className="reacticonsdiv">
+                <GiElectric />
+              </div>
+              <div className="btntext"> Buy Now</div>
+            </button>
+          </div>
+        </div>
+
+        <div className="descproview">
+          <div>
+            <h4>{product.title}</h4>
+          </div>
+          <div>
+            <h6>{product.description}</h6>
+          </div>
+          <div className="headpricediv">
+            <p className="sphead">Special Price</p>
+            <div className="pricedivview">
+              <h3>
+                <BiRupee />
+                {product.sale_price}
+              </h3>
+            </div>
+          </div>
+          <div className="btndivprod">
+            <button className="ratingvidediv">
+              <div>
+                5 <AiTwotoneStar />
+              </div>
+            </button>
+            <div className="desccproview">
+              <p className="paradeszcpro">17 Rating & 9 Reviews</p>
+            </div>
+          </div>
+          <div className="offersivview">
+            <div>Available offers</div>
+            <div className="maindescprodiv">
+              <p>
+                <LoyaltyIcon className="badgeclass" /> Partner OfferSign up for
+                Flipkart Pay Later and get Flipkart Gift Card worth upto ₹500*
+              </p>
+              <p>
+                <LoyaltyIcon className="badgeclass" />
+                Bank Offer5% Cashback on Flipkart Axis Bank CardT&C
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   );
 }

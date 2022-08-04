@@ -58,7 +58,7 @@ export default function Cart() {
   const [product, setProduct] = useState([]);
   async function GetData(slug) {
     const res = await axios.get(
-      `${process.env.REACT_APP_BACKEND_URL}/api/products/slug/${slug}`
+      `http://localhost:4000/api/products/slug/${slug}`
     );
     console.log(res.data);
     setProduct(res.data);
@@ -72,9 +72,7 @@ export default function Cart() {
   //     dispatch(removeFromCart(_id));
   //   };
 
-  const buyNow = async () => {
-    
-  };
+  const buyNow = async () => {};
 
   return (
     <>

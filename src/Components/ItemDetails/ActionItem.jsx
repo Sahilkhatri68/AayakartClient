@@ -55,11 +55,12 @@ export default function ActionItem() {
   // getting image from api
   const { slug } = useParams();
   async function GetData() {
-    const res = await axios.get(
-      `http://localhost:4000/api/products/slug/${slug}`
-    );
-    console.log(res.data);
-    setProduct(res.data);
+    const res = await axios
+      .get(`http://localhost:4000/api/products/slug/${slug}`)
+      .then((res) => {
+        setProduct(res.data);
+        console.log(res.data);
+      });
   }
   useEffect(() => {
     GetData();
@@ -74,7 +75,7 @@ export default function ActionItem() {
 
   async function AddItemToCart() {
     await axios
-      .post(`${process.env.REACT_APP_BACKEND_URL}/api/cart/`, {
+      .post(`http://localhost:4000/api/cart`, {
         product_id: product._id,
         price: product.sale_price,
         title: product.title,
@@ -89,7 +90,7 @@ export default function ActionItem() {
 
   async function BuyNow() {
     await axios
-      .post(`${process.env.REACT_APP_BACKEND_URL}/api/orders`, {
+      .post(`http://localhost:4000/api/orders`, {
         product_id: product_id,
         price: price,
         title: title,

@@ -1,37 +1,63 @@
-.mainproduct {
-  width: 100%;
+/* .formcontdrop {
+  width: 5%;
+} */
+.typediv {
+  margin-top: 15px;
+}
+.iconanddesc {
   display: flex;
-}
-.cardd {
-  margin: 10px;
-  width: 30%;
-}
-.btnss {
-  display: flex;
-  justify-content: space-around;
-}
-.adc {
+  align-items: center;
   text-align: center;
-  width: 35%;
-  border: none;
-  border-radius: 5px;
-  height: 39px;
+  justify-content: space-between;
+}
+.cardcontdiv {
+  padding: 4px;
+}
+.cartbtndiv {
+  width: "46%";
+  border-radius: 2px;
+  height: 40px;
   background-color: #ff9f00;
-  color: white;
-  font-size: 17px;
-  font-weight: 500;
-  cursor: pointer;
-}
-.btnbuy {
-    width: 35%;
+  color: #fff;
+  display: flex;
+  justify-content: space-evenly;
+  text-align: center;
+  align-items: center;
   border: none;
   cursor: pointer;
-  font-weight: 500;
-  font-size: 17px;
+}
+.buybtndiv {
+  width: "46%";
+  border-radius: 2px;
+  height: 40px;
+  background: #fb641b;
+  color: #fff;
+  display: flex;
+  justify-content: space-evenly;
   text-align: center;
-
-  border-radius: 5px;
-  height: 39px;
-  background-color: #fb641b;
-  color: white;
+  align-items: center;
+  border: none;
+  cursor: pointer;
+}
+.outerdivbtn {
+  display: flex;
+  justify-content: space-evenly;
+}
+.btntext {
+  margin-left: 5px;
+}
+.reacticonsdiv {
+  margin-bottom: 2px;
+  font-size: 18px;
+}
+.pricediv {
+  font-size: 20px;
+  text-align: left;
+  color: black;
+}
+.rupeediv {
+  margin-bottom: 6px;
+}
+.itemdivflex {
+  display: flex;
 }

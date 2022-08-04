@@ -47,11 +47,12 @@ export default function ProductDetail() {
   const [product, setProduct] = useState([]);
 
   async function GetData() {
-    const res = await axios.get(
-      `http://localhost:4000/api/products/slug/${slug}`
-    );
-    console.log(res.data);
-    setProduct(res.data);
+    const res = await axios
+      .get(`http://localhost:4000/api/products/slug/${slug}`)
+      .then((res) => {
+        setProduct(res.data);
+        console.log(res.data);
+      });
   }
   useEffect(() => {
     GetData();

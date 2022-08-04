@@ -21,6 +21,7 @@ import Addproduct from "./Components/User/Addproduct";
 import NewProduct from "./Components/User/Createproduct";
 import StaffEditProduct from "./Components/User/StaffEditProduct";
 import axios from "axios";
+import ProductDetail from "./Components/ItemDetails/ProductDetail";
 
 // credentials of axios--------------------
 axios.defaults.withCredentials = true;
@@ -35,9 +36,10 @@ function App() {
           <Box style={{ marginTop: 54 }}>
             <Switch>
               <Route exact path="/" component={Home} />
+              <Route exact path="/productdetail" component={ProductDetail} />
 
-              <Route exact path="/cart" component={Cart} />
-              <Route exact path="/products/:slug" component={DetailView} />
+              <Route exact path="/cart/:slug" component={Cart} />
+              <Route exact path="/product/:slug" component={DetailView} />
               <Route exact path="/seller" component={Seller}></Route>
               <Route exact path="/Appsoon" component={Appsoon}></Route>
               <Route exact path="/Enroll" component={Enroll}></Route>
