@@ -14,7 +14,7 @@ import LoyaltyIcon from "@mui/icons-material/Loyalty";
 import { BsCart3 } from "react-icons/bs";
 import { GiElectric } from "react-icons/gi";
 import { Link } from "react-router-dom";
-
+import Swal from "sweetalert2";
 const useStyles = makeStyles((theme) => ({
   component: {
     marginTop: 55,
@@ -91,18 +91,25 @@ export default function DetailView() {
   async function AddtoCart() {
     const resp = await axios
       .post(`http://localhost:4000/api/cart/`, {
-        user_id: user_id,
-        product_id: product_id,
+        product_id: product._id,
         quantity: 1,
-        price: price,
-        product_name: title,
-        product_image: featured_image,
+        price: product.sale_price,
+        title: product.title,
+        featured_image: product.featured_image,
       })
       .then(function (resp) {
         console.log(resp);
+        Swal.fire({
+          icon: "success",
+          title: "Item Added",
+        });
       })
       .catch(function (error) {
         console.log(error);
+        Swal.fire({
+          icon: "The Internet?",
+          title: "Please Login first !",
+        });
       });
   }
   return (
@@ -113,7 +120,7 @@ export default function DetailView() {
           <div className="mainbtnpru">
             <button
               size="small"
-              onClick={() => AddtoCart(`${product.slug}`)}
+              onClick={() => AddtoCart()}
               className="cartbtndivone"
             >
               <div className="reacticonsdiv">

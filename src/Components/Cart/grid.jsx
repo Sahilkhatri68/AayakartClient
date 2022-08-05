@@ -15,6 +15,8 @@ import { GiElectric } from "react-icons/gi";
 import "./grid.css";
 import FavoriteIcon from "@mui/icons-material/Favorite";
 import IconButton from "@mui/material/IconButton";
+import axios from "axios";
+import Swal from "sweetalert2";
 
 import Card from "@mui/material/Card";
 import CardActions from "@mui/material/CardActions";
@@ -22,6 +24,7 @@ import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
+import { useEffect } from "react";
 const Item = styled(Paper)(({ theme }) => ({
   backgroundColor: theme.palette.mode === "dark" ? "#1A2027" : "#fff",
   ...theme.typography.body2,
@@ -65,6 +68,57 @@ export default function BasicGrid() {
   const handleChange = (event, newValue) => {
     setValue(newValue);
   };
+
+  // getting data code -------------------
+  const [product, setProduct] = useState([]);
+
+  async function GetData() {
+    const response = await axios
+      .get(`http://localhost:4000/api/products`)
+      .then((response) => {
+        setProduct(response.data);
+        console.log(response.data);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }
+  useEffect(() => {
+    GetData();
+  }, []);
+
+  // add to cart code----------------------
+  // addtocart post request
+
+  const [user_id, setUser_id] = useState("");
+  const [product_id, setProduct_id] = useState("");
+  const [price, setPrice] = useState("");
+  const [title, setTitle] = useState("");
+  const [featured_image, setFeatured_image] = useState("");
+
+  async function AddtoCart(product_id,   price, title, featured_image) {
+    const resp = await axios
+      .post(`http://localhost:4000/api/cart/`, {
+        product_id: product._id,
+        quantity: 1,
+        price: product.sale_price,
+        title: product.title,
+        featured_image: product.featured_image,
+      })
+      .then(function (resp) {
+        console.log(resp);
+        Swal.fire({
+          icon: "success",
+          title: "Item Added",
+        });
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
+  }
+
+  // heart icon color change------------------
+
   return (
     <Box sx={{ flexGrow: 1, marginTop: 8 }}>
       <Grid container spacing={2}>
@@ -168,188 +222,69 @@ export default function BasicGrid() {
             </div>
           </Item>
         </Grid>
-        <Grid item xs={10}>
+        <Grid item xs={10} className="gridviewall">
           <Item className="itemdivflex">
-            <div>
-              <Card sx={{ maxWidth: 250 }}>
-                <CardMedia
-                  component="img"
-                  alt="green iguana"
-                  height="200"
-                  image="https://m.media-amazon.com/images/I/81q1-5edHwL._UL1500_.jpg"
-                />
-
-                <CardContent className="cardcontdiv">
-                  <div className="iconanddesc">
-                    <Typography gutterBottom variant="h5" component="div">
-                      Lizard
-                    </Typography>
-                    <IconButton aria-label="settings">
-                      <FavoriteIcon />
-                    </IconButton>
+            {product.map((product) => {
+              return (
+                <>
+                  <div>
+                    <Card sx={{ maxWidth: 250, margin: 1 }}>
+                      <CardMedia
+                        component="img"
+                        alt="Img"
+                        height="200"
+                        src={product.featured_image}
+                      />
+                      <CardContent className="cardcontdiv">
+                        <div className="iconanddesc">
+                          <Typography gutterBottom variant="h5" component="div">
+                            {product.title}
+                          </Typography>
+                          <IconButton aria-label="settings">
+                            <FavoriteIcon />
+                          </IconButton>
+                        </div>
+                        <Typography variant="body2" color="text.secondary">
+                          <div className="pricediv">
+                            <BiRupee clas />
+                            {product.sale_price}
+                          </div>
+                        </Typography>
+                        <Typography variant="body2" color="text.secondary">
+                          {product.description}
+                        </Typography>
+                      </CardContent>
+                      <div className="outerdivbtn">
+                        <button
+                          size="small"
+                          className="cartbtndiv"
+                          onClick={() =>
+                            AddtoCart(
+                              product_id,
+                              price,
+                              title,
+                              featured_image
+                            )
+                          }
+                        >
+                          <div className="reacticonsdiv">
+                            <BsCart3 />
+                          </div>
+                          <div className="btntext"> Add to cart</div>
+                        </button>
+                        <button size="small" className="buybtndiv">
+                          <div className="reacticonsdiv">
+                            <GiElectric />
+                          </div>
+                          <div className="btntext"> Buy Now</div>
+                        </button>
+                      </div>
+                      <CardActions></CardActions>
+                    </Card>
                   </div>
-                  <Typography variant="body2" color="text.secondary">
-                    <div className="pricediv">
-                      <BiRupee clas />
-                      450
-                    </div>
-                  </Typography>
-                  <Typography variant="body2" color="text.secondary">
-                    Lizards are a widespread group of squamate reptiles, with
-                  </Typography>
-                </CardContent>
-                <div className="outerdivbtn">
-                  <button size="small" className="cartbtndiv">
-                    <div className="reacticonsdiv">
-                      <BsCart3 />
-                    </div>
-                    <div className="btntext"> Add to cart</div>
-                  </button>
-                  <button size="small" className="buybtndiv">
-                    <div className="reacticonsdiv">
-                      <GiElectric />
-                    </div>
-                    <div className="btntext"> Buy Now</div>
-                  </button>
-                </div>
-                <CardActions></CardActions>
-              </Card>
-            </div>
-            <div style={{ marginLeft: 20 }}>
-              <Card sx={{ maxWidth: 250 }}>
-                <CardMedia
-                  component="img"
-                  alt="green iguana"
-                  height="200"
-                  image="https://images.meesho.com/images/products/99166232/hvma7_512.jpg"
-                />
-
-                <CardContent className="cardcontdiv">
-                  <div className="iconanddesc">
-                    <Typography gutterBottom variant="h5" component="div">
-                      Lizard
-                    </Typography>
-                    <IconButton aria-label="settings">
-                      <FavoriteIcon />
-                    </IconButton>
-                  </div>
-                  <Typography variant="body2" color="text.secondary">
-                    <div className="pricediv">
-                      <BiRupee clas />
-                      450
-                    </div>
-                  </Typography>
-                  <Typography variant="body2" color="text.secondary">
-                    Lizards are a widespread group of squamate reptiles, with
-                  </Typography>
-                </CardContent>
-                <div className="outerdivbtn">
-                  <button size="small" className="cartbtndiv">
-                    <div className="reacticonsdiv">
-                      <BsCart3 />
-                    </div>
-                    <div className="btntext"> Add to cart</div>
-                  </button>
-                  <button size="small" className="buybtndiv">
-                    <div className="reacticonsdiv">
-                      <GiElectric />
-                    </div>
-                    <div className="btntext"> Buy Now</div>
-                  </button>
-                </div>
-                <CardActions></CardActions>
-              </Card>
-            </div>
-            <div style={{ marginLeft: 20 }}>
-              <Card sx={{ maxWidth: 250 }}>
-                <CardMedia
-                  component="img"
-                  alt="green iguana"
-                  height="200"
-                  image="https://images.meesho.com/images/products/99166232/hvma7_512.jpg"
-                />
-
-                <CardContent className="cardcontdiv">
-                  <div className="iconanddesc">
-                    <Typography gutterBottom variant="h5" component="div">
-                      Lizard
-                    </Typography>
-                    <IconButton aria-label="settings">
-                      <FavoriteIcon />
-                    </IconButton>
-                  </div>
-                  <Typography variant="body2" color="text.secondary">
-                    <div className="pricediv">
-                      <BiRupee clas />
-                      450
-                    </div>
-                  </Typography>
-                  <Typography variant="body2" color="text.secondary">
-                    Lizards are a widespread group of squamate reptiles, with
-                  </Typography>
-                </CardContent>
-                <div className="outerdivbtn">
-                  <button size="small" className="cartbtndiv">
-                    <div className="reacticonsdiv">
-                      <BsCart3 />
-                    </div>
-                    <div className="btntext"> Add to cart</div>
-                  </button>
-                  <button size="small" className="buybtndiv">
-                    <div className="reacticonsdiv">
-                      <GiElectric />
-                    </div>
-                    <div className="btntext"> Buy Now</div>
-                  </button>
-                </div>
-                <CardActions></CardActions>
-              </Card>
-            </div>
-            <div style={{ marginLeft: 20 }}>
-              <Card sx={{ maxWidth: 250 }}>
-                <CardMedia
-                  component="img"
-                  alt="green iguana"
-                  height="200"
-                  image="https://images.meesho.com/images/products/99166232/hvma7_512.jpg"
-                />
-
-                <CardContent className="cardcontdiv">
-                  <div className="iconanddesc">
-                    <Typography gutterBottom variant="h5" component="div">
-                      Lizard
-                    </Typography>
-                    <IconButton aria-label="settings">
-                      <FavoriteIcon />
-                    </IconButton>
-                  </div>
-                  <Typography variant="body2" color="text.secondary">
-                    <div className="pricediv">
-                      <BiRupee clas />
-                      450
-                    </div>
-                  </Typography>
-                  <Typography variant="body2" color="text.secondary">
-                    Lizards are a widespread group of squamate reptiles, with
-                  </Typography>
-                </CardContent>
-                <div className="outerdivbtn">
-                  <button size="small" className="cartbtndiv">
-                    <div className="reacticonsdiv">
-                      <BsCart3 />
-                    </div>
-                    <div className="btntext"> Add to cart</div>
-                  </button>
-                  <button size="small" className="buybtndiv">
-                    <div className="reacticonsdiv">
-                      <GiElectric />
-                    </div>
-                    <div className="btntext"> Buy Now</div>
-                  </button>
-                </div>
-                <CardActions></CardActions>
-              </Card>
-            </div>
+                </>
+              );
+            })}
           </Item>
         </Grid>
       </Grid>

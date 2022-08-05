@@ -61,3 +61,8 @@
 .itemdivflex {
   display: flex;
 }
+@media (max-width: 800px) {
+  .gridviewall {
+    display: block;
+  }
+}

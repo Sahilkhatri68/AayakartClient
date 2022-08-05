@@ -10,7 +10,6 @@ import Footer from "./Components/Footer/Footer";
 import Seller from "./Components/Cart/BecomeSeller";
 import Appsoon from "./Components/Cart/AppSoon";
 import Enroll from "./Components/Cart/Enrool";
-import Viewall from "./Components/Home/Viewall";
 import Profile from "./Components/Header/Profile";
 import BasicGrid from "./Components/Cart/grid";
 import ProfileSettings from "./Components/Header/ProfileSettings";
@@ -22,6 +21,9 @@ import NewProduct from "./Components/User/Createproduct";
 import StaffEditProduct from "./Components/User/StaffEditProduct";
 import axios from "axios";
 import ProductDetail from "./Components/ItemDetails/ProductDetail";
+import CartItem from "./Components/Cart/CartItem";
+import TotalView from "./Components/Cart/TotalView";
+import Checkout from "./Components/Checkout/Checkout";
 
 // credentials of axios--------------------
 axios.defaults.withCredentials = true;
@@ -36,9 +38,12 @@ function App() {
           <Box style={{ marginTop: 54 }}>
             <Switch>
               <Route exact path="/" component={Home} />
+              <Route exact path="/cartitem" component={CartItem} />
+              <Route exact path="/checkout" component={Checkout} />
+              <Route exact path="/totalview" component={TotalView} />
               <Route exact path="/productdetail" component={ProductDetail} />
 
-              <Route exact path="/cart/:slug" component={Cart} />
+              <Route exact path="/cart" component={Cart} />
               <Route exact path="/product/:slug" component={DetailView} />
               <Route exact path="/seller" component={Seller}></Route>
               <Route exact path="/Appsoon" component={Appsoon}></Route>

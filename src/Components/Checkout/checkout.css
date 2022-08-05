@@ -1,0 +1,39 @@
+.maincheckout {
+  padding: 30px;
+  display: flex;
+}
+.leftcheck {
+  width: 70%;
+}
+.rightcheck {
+  width: 25%;
+  margin: auto;
+}
+.deliverydivchk {
+  background-color: #2874f0;
+  color: white;
+  font-size: 20px;
+  font-weight: 500;
+  padding: 10px;
+}
+.addressform {
+  padding: 20px;
+  background-color: #fefeff;
+}
+.txtfldinp {
+  width: 95%;
+  display: flex;
+  margin-top: 15px;
+}
+.delbtn {
+  width: 250px;
+  font-size: 20px;
+  color: white;
+  background-color: #fb641b;
+  border: none;
+  border-radius: 3px;
+  height: 50px;
+}
+.btnofdev {
+  margin-top: 40px;
+}

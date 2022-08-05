@@ -1,5 +1,4 @@
 import { Box, makeStyles, Typography, Button, Grid } from "@material-ui/core";
-import CartItem from "./CartItem";
 import { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { addToCart, removeFromCart } from "../../redux/actions/cartActions";
@@ -9,7 +8,7 @@ import { loadRazorpay } from "../../razorpay/loadPayment";
 import { useParams } from "react-router-dom";
 import { useState } from "react";
 import axios from "axios";
-
+import CartItem from "./CartItem";
 const useStyle = makeStyles((theme) => ({
   component: {
     // marginTop: 55,
@@ -57,10 +56,7 @@ export default function Cart() {
   // getting data
   const [product, setProduct] = useState([]);
   async function GetData(slug) {
-    const res = await axios.get(
-      `http://localhost:4000/api/products/slug/${slug}`
-    );
-    console.log(res.data);
+    const res = await axios.get(`http://localhost:4000/api/cart`);
     setProduct(res.data);
     console.log(res.data);
   }
@@ -76,7 +72,7 @@ export default function Cart() {
 
   return (
     <>
-      {cartItems.length ? (
+      {product.length != 0 ? (
         <Grid container className={classes.component}>
           <Grid
             item
@@ -88,12 +84,10 @@ export default function Cart() {
           >
             <Box className={classes.header}>
               <Typography style={{ fontWeight: 600, fontSize: 18 }}>
-                My Cart ({cartItems?.length})
+                My Cart ({product?.length})
               </Typography>
             </Box>
-            {cartItems.map((item) => (
-              <CartItem item={item} />
-            ))}
+            <CartItem />
             <Box className={classes.bottom}>
               <Button
                 onClick={() => buyNow()}
@@ -105,7 +99,7 @@ export default function Cart() {
             </Box>
           </Grid>
           <Grid item lg={3} md={3} sm={12} xs={12}>
-            <TotalView cartItems={cartItems} />
+            <TotalView product={product} />
           </Grid>
         </Grid>
       ) : (

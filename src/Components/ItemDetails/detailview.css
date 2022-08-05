@@ -14,7 +14,6 @@
   width: 70%;
   margin-left: 20px;
   padding: 30px;
-
 }
 .proimgdiv {
   width: 100%;
@@ -95,4 +94,42 @@
   cursor: pointer;
   font-size: 20px;
   border-radius: 4px;
+}
+@media (max-width: 750px) {
+  .contproview {
+    display: block;
+  }
+  .imgproview {
+    width: 70%;
+    margin: auto;
+  }
+  .descproview {
+    width: 100%;
+    margin-left: 0px;
+    padding: 20px;
+  }
+}
+@media (max-width: 820px) {
+  .imgproview {
+    width: 40%;
+  }
+  .descproview {
+    width: 60%;
+  }
+}
+@media (max-width: 950px) {
+  .imgproview {
+    width: 40%;
+  }
+  .descproview {
+    width: 65%;
+  }
+}
+@media (max-width: 1100px) {
+  .imgproview {
+    width: 35%;
+  }
+  .descproview {
+    width: 65%;
+  }
 }

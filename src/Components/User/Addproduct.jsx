@@ -1,14 +1,57 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./addproduct.css";
+
 // import Stack from "@mui/material/Stack";
 // import TextField from "@mui/material/TextField";
 import Swal from "sweetalert2";
+import axios from "axios";
 export default function Addproduct() {
   const handleSubmit = (event) => {
     event.preventDefault();
 
     console.log("form submitted ✅");
   };
+
+  // upload product by user
+  const [title, setTitle] = useState("");
+  const [slug, setSlug] = useState("");
+  const [description, setDescription] = useState("");
+  const [category, setCategory] = useState("");
+  const [featured_image, setFeatured_image] = useState("");
+  const [regular_price, setRegular_price] = useState();
+  const [sale_price, setSale_price] = useState();
+  const [stock_status, setStock_status] = useState();
+  const [enable_reviews, setEnable_reviews] = useState();
+  const [enable_comments, setEnable_comments] = useState("");
+  const [isprivate, setIsprivate] = useState("");
+  const [tax_status, setTax_status] = useState("");
+  const [tax_class, setTax_class] = useState("");
+  const [tags, setTags] = useState("");
+
+  // Upload File
+  const uploadFile = (url, file) => {
+    let formData = new FormData();
+    formData.append("uploadedFile", file);
+    axios
+      .post(url, formData, {
+        headers: {
+          "Content-Type": "multipart/form-data",
+        },
+      })
+      .then((e) => {
+        console.log("File successfully uploaded", e);
+        // setStatus("success", e);
+        // getFileData();
+        // setOpen(true);
+      })
+      .catch((e) => {
+        console.log(e);
+        // setAlert(e.response.data.message);
+        // setStatus(e.response.data.status);
+      });
+  };
+
+  // if (!files) return null;
   return (
     <>
       <div className="ctent">
@@ -26,7 +69,8 @@ export default function Addproduct() {
                       <input
                         type="text"
                         className="form-control"
-                        name="name"
+                        name={title}
+                        onChange={(e) => setTitle(e.target.value)}
                         id="name"
                         placeholder=" name"
                       />
@@ -38,35 +82,26 @@ export default function Addproduct() {
                       <input
                         type="text"
                         className="form-control"
-                        name="Category"
+                        name={category}
+                        onChange={(e) => setCategory(e.target.value)}
                         id="email"
                         placeholder="Category"
                       />
                     </div>
                     <div className="col-md-6 form-group mb-3">
                       <label htmlFor="" className="col-form-label">
-                        Product Title
+                        Slug
                       </label>
                       <input
                         type="text"
                         className="form-control"
-                        name="Title"
+                        name={slug}
+                        onChange={(e) => setSlug(e.target.value)}
                         id="name"
                         placeholder=" Title"
                       />
                     </div>
-                    <div className="col-md-6 form-group mb-3">
-                      <label htmlFor="" className="col-form-label">
-                        Product Slug
-                      </label>
-                      <input
-                        type="text"
-                        className="form-control"
-                        name="Slug"
-                        id="name"
-                        placeholder=" Slug"
-                      />
-                    </div>
+
                     <div className="col-md-6 form-group mb-3">
                       <label htmlFor="" className="col-form-label">
                         Product tags
@@ -74,7 +109,8 @@ export default function Addproduct() {
                       <input
                         type="text"
                         className="form-control"
-                        name="tags"
+                        name={tags}
+                        onChange={(e) => setTags(e.target.value)}
                         id="email"
                         placeholder="tags"
                       />
@@ -86,7 +122,8 @@ export default function Addproduct() {
                       <input
                         type="text"
                         className="form-control"
-                        name="regularPrice"
+                        name={regular_price}
+                        onChange={(e) => setRegular_price(e.target.value)}
                         id="email"
                         placeholder="regularprice"
                       />
@@ -98,7 +135,8 @@ export default function Addproduct() {
                       <input
                         type="text"
                         className="form-control"
-                        name="SalePrice"
+                        name={sale_price}
+                        onChange={(e) => setSale_price(e.target.value)}
                         id="email"
                         placeholder="SalePrice"
                       />
@@ -110,7 +148,8 @@ export default function Addproduct() {
                       <input
                         type="text"
                         className="form-control"
-                        name="stockstaus"
+                        name={stock_status}
+                        onChange={(e) => setStock_status(e.target.value)}
                         id="stockstatus"
                         placeholder="Stock Status"
                       />
@@ -122,7 +161,8 @@ export default function Addproduct() {
                       <input
                         type="text"
                         className="form-control"
-                        name="Reviews"
+                        name={enable_reviews}
+                        onChange={(e) => setEnable_reviews(e.target.value)}
                         id="Reviews"
                         placeholder="Reviews"
                       />
@@ -134,7 +174,8 @@ export default function Addproduct() {
                       <input
                         type="text"
                         className="form-control"
-                        name="Comments"
+                        name={enable_comments}
+                        onChange={(e) => setEnable_comments(e.target.value)}
                         id="Comments"
                         placeholder="Comments"
                       />
@@ -146,7 +187,8 @@ export default function Addproduct() {
                       <input
                         type="text"
                         className="form-control"
-                        name=" Is_private"
+                        name={isprivate}
+                        onChange={(e) => setIsprivate(e.target.value)}
                         id=" Is_private"
                         placeholder="Yes/no"
                       />
@@ -158,7 +200,8 @@ export default function Addproduct() {
                       <input
                         type="text"
                         className="form-control"
-                        name=" Tax_status"
+                        name={tax_status}
+                        onChange={(e) => setTax_status(e.target.value)}
                         id=" Tax_status"
                         placeholder="Yes/no"
                       />
@@ -170,25 +213,27 @@ export default function Addproduct() {
                       <input
                         type="text"
                         className="form-control"
-                        name=" Tax_Class"
+                        name={tax_class}
+                        onChange={(e) => setTax_class(e.target.value)}
                         id=" Tax_Class"
                         placeholder="Yes/no"
                       />
                     </div>
                     <div className="col-md-6 form-group mb-3">
                       <label htmlFor="" className="col-form-label">
-                        Tag's
+                        featured_image
                       </label>
                       <input
-                        type="text"
+                        type="file"
                         className="form-control"
-                        name=" Tag's"
-                        id=" Tag's"
-                        placeholder="Trending, Fun, Sports etc."
+                        name={featured_image}
+                        onChange={(e) => setFeatured_image(e.target.value)}
+                        id=" Tax_Class"
+                        placeholder="image upload here"
                       />
                     </div>
                   </div>
-                
+
                   <div className="row">
                     <div className="col-md-12 form-group mb-3">
                       <label htmlFor="message" className="col-form-label">
@@ -196,7 +241,8 @@ export default function Addproduct() {
                       </label>
                       <textarea
                         className="form-control"
-                        name="Description"
+                        name={description}
+                        onChange={(e) => setDescription(e.target.value)}
                         id="Description"
                         cols={30}
                         rows={3}
@@ -207,11 +253,10 @@ export default function Addproduct() {
                   </div>
                   <div className="row">
                     <div className="col-md-12 form-group">
-                      <input
+                      <button
                         type="submit"
-                        defaultValue="Send Message"
                         className="btn btn-primary rounded-0 py-2 px-4"
-                      />
+                      >Submit</button>
                       <span className="submitting" />
                     </div>
                   </div>
