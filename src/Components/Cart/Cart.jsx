@@ -9,6 +9,8 @@ import { useParams } from "react-router-dom";
 import { useState } from "react";
 import axios from "axios";
 import CartItem from "./CartItem";
+import { Link } from "react-router-dom";
+
 const useStyle = makeStyles((theme) => ({
   component: {
     // marginTop: 55,
@@ -89,13 +91,11 @@ export default function Cart() {
             </Box>
             <CartItem />
             <Box className={classes.bottom}>
-              <Button
-                onClick={() => buyNow()}
-                variant="contained"
-                className={classes.placeOrder}
-              >
-                Place Order
-              </Button>
+              <Link to="/checkout">
+                <Button variant="contained" className={classes.placeOrder}>
+                  Place Order
+                </Button>
+              </Link>
             </Box>
           </Grid>
           <Grid item lg={3} md={3} sm={12} xs={12}>

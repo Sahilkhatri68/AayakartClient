@@ -126,8 +126,8 @@ export default function StaffProfile() {
                 </h6>
               </div>
               <div className="skilldiv">
-                <Link to="/stafeditprod" className="skillparainfo">
-                  Edit Product
+                <Link to="/viewproduct" className="skillparainfo">
+                  View Product
                 </Link>
 
                 <p className="skillparainfo">Branding</p>

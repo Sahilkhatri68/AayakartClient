@@ -15,6 +15,7 @@ import { BsCart3 } from "react-icons/bs";
 import { GiElectric } from "react-icons/gi";
 import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
+import { Slide } from "react-slideshow-image";
 const useStyles = makeStyles((theme) => ({
   component: {
     marginTop: 55,

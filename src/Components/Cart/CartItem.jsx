@@ -74,6 +74,7 @@ const CartItem = ({ item, RemoveItemFromCart }) => {
           icon: "Success",
           title: "Item Removed",
         });
+        GetData();
       })
       .catch((error) => {
         console.log(error);

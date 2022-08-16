@@ -60,9 +60,10 @@ const useStyle = makeStyles((theme) => ({
   },
   button: {
     marginLeft: "auto",
-    backgroundColor: "#2874f0",
+    backgroundColor: "#dddddd",
     borderRadius: 2,
-    fontSize: 13,
+    fontSize: 12,
+    fontWeight: 500,
   },
   wrapper: {
     padding: "25px 15px",
@@ -93,11 +94,7 @@ const MultiSlide = ({ data, timer, title }) => {
           </Box>
         )}
         <Link to="/viewall">
-          <Button
-            variant="contained"
-            color="primary"
-            className={classes.button}
-          >
+          <Button variant="outlined" color="black" className={classes.button}>
             View All
           </Button>
         </Link>

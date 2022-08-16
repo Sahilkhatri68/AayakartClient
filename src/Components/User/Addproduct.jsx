@@ -60,7 +60,12 @@ export default function Addproduct() {
             <div className="col-md-12">
               <div className="form h-100">
                 <h3>Add Product</h3>
-                <form className="mb-5" id="contactForm" name="contactForm">
+                <form
+                  className="mb-5"
+                  id="contactForm"
+                  name="contactForm"
+                  onSubmit={handleSubmit}
+                >
                   <div className="row">
                     <div className="col-md-6 form-group mb-3">
                       <label htmlFor="" className="col-form-label">
@@ -256,7 +261,10 @@ export default function Addproduct() {
                       <button
                         type="submit"
                         className="btn btn-primary rounded-0 py-2 px-4"
-                      >Submit</button>
+                        onClick={() => uploadFile()}
+                      >
+                        Submit
+                      </button>
                       <span className="submitting" />
                     </div>
                   </div>

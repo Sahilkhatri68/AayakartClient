@@ -11,24 +11,35 @@ export default function Checkout() {
           <div className="deliverydivchk">Delivery Address</div>
           <div className="addressform">
             <div className="txtfldinp">
-              <TextField id="outlined-basic" label="Name" variant="outlined" />
+              {/* Number */}
               <TextField
                 id="outlined-basic"
-                label="Number"
+                label="Name"
                 variant="outlined"
+                size="small"
+              />
+              <TextField
+                id="outlined-basic"
+                label="Email"
+                variant="outlined"
+                size="small"
                 sx={{ marginLeft: 3 }}
               />
             </div>
+            {/* pincode */}
             <div className="txtfldinp">
               <TextField
                 id="outlined-basic"
                 label="Pincode"
                 variant="outlined"
+                size="small"
               />
+
               <TextField
                 id="outlined-basic"
-                label="Locality"
+                label="Country"
                 variant="outlined"
+                size="small"
                 sx={{ marginLeft: 3 }}
               />
             </div>
@@ -37,18 +48,34 @@ export default function Checkout() {
                 id="outlined-basic"
                 label="City"
                 variant="outlined"
+                size="small"
               />
               <TextField
                 id="outlined-basic"
-                label="Locality"
+                label="State"
                 variant="outlined"
+                size="small"
                 sx={{ marginLeft: 3 }}
               />
             </div>
+            <div className="txtfldinp">
+              <TextField
+                id="outlined-basic"
+                label="Address_One"
+                variant="outlined"
+                size="small"
+              />
+              <TextField
+                id="outlined-basic"
+                label="Address_Two"
+                variant="outlined"
+                size="small"
+                sx={{ marginLeft: 3 }}
+              />
+            </div>
+
             <div className="btnofdev">
-              <button className="delbtn">
-                Save And Deliver Here
-              </button>
+              <button className="delbtn">Save And Deliver Here</button>
             </div>
           </div>
         </div>

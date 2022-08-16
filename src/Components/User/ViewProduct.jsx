@@ -42,9 +42,11 @@ export default function ViewProduct() {
   // }, []);
 
   // Delete
+
   const RemoveProduct = async (_id) => {
     try {
       await axios.delete(`http://localhost:4000/api/products/${_id}`);
+      Swal.fire("Product Deleted!", "success");
       Getproducts();
     } catch (error) {
       console.log(error);
@@ -83,7 +85,6 @@ export default function ViewProduct() {
               <th scope="col">Sale_Price</th>
               <th scope="col">Regular_Price</th>
               <th scope="col">Description</th>
-              <th scope="col">Visit</th>
               <th scope="col">
                 Edit <FiEdit />
               </th>
@@ -109,9 +110,7 @@ export default function ViewProduct() {
                     {item.regular_price}
                   </td>
                   <td data-label="Description">{item.description}</td>
-                  <td data-label="Visit">
-                    <Link to="#">Link</Link>
-                  </td>
+
                   <td data-label="edit">
                     <Link to={`/stafeditprod/product/${item.slug}`}>
                       <FiEdit

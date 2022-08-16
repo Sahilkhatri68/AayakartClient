@@ -1,200 +1,213 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Staffprofile.css";
 import { Link } from "react-router-dom";
-import Stack from "@mui/material/Stack";
-import Button from "@mui/material/Button";
-import Snackbar from "@mui/material/Snackbar";
-import MuiAlert from "@mui/material/Alert";
-
-// snackbar
-const Alert = React.forwardRef(function Alert(props, ref) {
-  return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
-});
-
-export default function StaffEditProfile() {
-  // snackbar
-  const [open, setOpen] = React.useState(false);
-
-  const handleClick = () => {
-    setOpen(true);
-  };
-
-  const handleClose = (event, reason) => {
-    if (reason === "clickaway") {
-      return;
+import { FiPower } from "react-icons/fi";
+import axios from "axios";
+import wh from "../images/wh.jpg";
+import { BsFillPatchCheckFill } from "react-icons/bs";
+import { AiTwotoneStar, AiOutlineCheck } from "react-icons/ai";
+import { MdLocationPin } from "react-icons/md";
+import { BiMessageRounded } from "react-icons/bi";
+import { FaUserAlt } from "react-icons/fa";
+export default function StaffProfile() {
+  const [user, setUser] = useState([]);
+  async function GetUsers() {
+    try {
+      const response = await axios.get("http://localhost:4000/api/profile", {
+        withCredentials: true,
+      });
+      setUser(response.data);
+      console.log(response.data);
+    } catch (error) {
+      console.log(error);
     }
+  }
+  React.useEffect(() => {
+    GetUsers();
+  }, []);
 
-    setOpen(false);
-  };
+  // logout funtion--------------------
+  async function UserLogut() {
+    try {
+      const resp = await axios.get("http://localhost:4000/api/logout", {
+        withCredentials: true,
+      });
+      console.log(resp.data);
+    } catch (error) {
+      console.log(error);
+    }
+  }
   return (
     <>
-      <div className="container emp-profile">
-        <div method="post">
-          <div className="row">
-            <div className="col-md-4">
-              <div className="profile-img">
-                <img
-                  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS52y5aInsxSm31CvHOFHWujqUx_wWTS9iM6s7BAm21oEN_RiGoog"
-                  alt=""
-                />
-                <div className="file btn btn-lg btn-primary">
-                  Change Photo
-                  <input type="file" name="file" />
-                </div>
-              </div>
-            </div>
-            <div className="col-md-6">
-              <div className="profile-head">
-                <h5>Customer</h5>
-
-                <ul className="nav nav-tabs" id="myTab" role="tablist">
-                  <li className="nav-item">
-                    <a
-                      className="nav-link active"
-                      id="home-tab"
-                      data-toggle="tab"
-                      href="#home"
-                      role="tab"
-                      aria-controls="home"
-                      aria-selected="true"
-                    >
-                      About
-                    </a>
-                  </li>
-                </ul>
-              </div>
-            </div>
-            <div className="col-md-2">
-              {/* <Link to="/editprofile">
-                <button className="Ebtn">Edit</button>
-              </Link> */}
+      <div className="mainuserprop">
+        <div className="outeruserprop">
+          <div className="leftuserprop">
+            <div>
+              <img src={wh} alt="user" className="userporpimg"></img>
             </div>
           </div>
-          <div className="row">
-            <div className="col-md-4">
-              <div className="profile-work">
-                <br />
+          <div className="emptysapceprop"></div>
+          <div className="rightuserprop">
+            <div className="userprophead">
+              <div className="userlocaprop">
+                <h3>{user.fname}</h3>
+                <div className="userpropright">
+                  <MdLocationPin className="lociconprop" /> New York, Ny
+                </div>
+              </div>
+              <p className="paraprop">
+                Role : {user.role} <BsFillPatchCheckFill className="RIcons" />
+              </p>
+              <div className="ratingprop">
+                <h6>Rating</h6>
+                <h5>
+                  8.5 <AiTwotoneStar style={{ color: "blue" }} />
+                  <AiTwotoneStar style={{ color: "blue" }} />
+                  <AiTwotoneStar style={{ color: "blue" }} />
+                  <AiTwotoneStar style={{ color: "blue" }} />
+                </h5>
+              </div>
+              <div className="threebtns">
+                <div className="parentbtndivprop">
+                  <button className="sendmsgbtn">
+                    <BiMessageRounded /> Send Message
+                  </button>
+                </div>
+                <div className="parentbtndivprop">
+                  <button className="contbtnprop">
+                    <AiOutlineCheck /> Contact
+                  </button>
+                </div>
+                <div className="parentbtndivprop">
+                  <button className="sendmsgbtn">Report</button>
+                </div>
+              </div>
+              <div className="aboutsecrtion">
+                <FaUserAlt />
+                <div className="propabout">About</div>
+              </div>
+              <hr className="hrinfo" />
+            </div>
+          </div>
+        </div>
+        <div className="bottomuserprop">
+          <div className="bottomleftprop">
+            <div>
+              <h2>Accessibility</h2>
+            </div>
+            <div>
+              <div className="accprop">
+                <h5>Spotify New</h5>{" "}
+                <div>
+                  <button className="pribtn">Primary</button>
+                </div>
+              </div>
+              <div>
+                <p className="ppropbtm">New York William Street</p>
+                <p className="ppropbtm">N.Y 1104 #45</p>
               </div>
             </div>
-            <div className="col-md-8">
-              <div className="tab-content profile-tab" id="myTabContent">
-                <div
-                  className="tab-pane fade show active"
-                  id="home"
-                  role="tabpanel"
-                  aria-labelledby="home-tab"
-                >
-                  <div className="row">
-                    <div className="col-md-6">
-                      <label>User Id</label>
-                    </div>
-                    <div className="col-md-6">
-                      <input style={{ padding: 3, marginBottom: 5 }}></input>
-                    </div>
-                  </div>
-                  <div className="row">
-                    <div className="col-md-6">
-                      <label>Name</label>
-                    </div>
-                    <div className="col-md-6">
-                      <input style={{ padding: 3, marginBottom: 5 }}></input>
-                    </div>
-                  </div>
-                  <div className="row">
-                    <div className="col-md-6">
-                      <label>Email</label>
-                    </div>
-                    <div className="col-md-6">
-                      <input style={{ padding: 3, marginBottom: 5 }}></input>
-                    </div>
-                  </div>
-                  <div className="row">
-                    <div className="col-md-6">
-                      <label>Phone</label>
-                    </div>
-                    <div className="col-md-6">
-                      <input style={{ padding: 3, marginBottom: 5 }}></input>
-                    </div>
-                  </div>
-                  <div className="row">
-                    <div className="col-md-6">
-                      <label>Profession</label>
-                    </div>
-                    <div className="col-md-6">
-                      <input style={{ padding: 3, marginBottom: 5 }}></input>
-                    </div>
-                    <div
-                      className="col-md-6 "
-                      style={{ textAlign: "right", marginTop: 20 }}
-                    >
-                      <button
-                        style={{
-                          border: "none",
-                          color: "white",
-                          background: "gray",
-                          fontSize: "18px",
-                          backgroundColor: "#2874f0",
-                        }}
-                      >
-                        Save
-                      </button>
-                    </div>
-                  </div>
+            <div>
+              <div className="accprop">
+                <h5>Spotify New</h5>{" "}
+                <div>
+                  <button className="pribtn">Primary</button>
                 </div>
-                <div
-                  className="tab-pane fade"
-                  id="profile"
-                  role="tabpanel"
-                  aria-labelledby="profile-tab"
-                >
-                  <div className="row">
-                    <div className="col-md-6">
-                      <label>Experience</label>
-                    </div>
-                    <div className="col-md-6">
-                      <p>Expert</p>
-                    </div>
-                  </div>
-                  <div className="row">
-                    <div className="col-md-6">
-                      <label>Hourly Rate</label>
-                    </div>
-                    <div className="col-md-6">
-                      <p>10$/hr</p>
-                    </div>
-                  </div>
-                  <div className="row">
-                    <div className="col-md-6">
-                      <label>Total Projects</label>
-                    </div>
-                    <div className="col-md-6">
-                      <p>230</p>
-                    </div>
-                  </div>
-                  <div className="row">
-                    <div className="col-md-6">
-                      <label>English Level</label>
-                    </div>
-                    <div className="col-md-6">
-                      <p>Expert</p>
-                    </div>
-                  </div>
-                  <div className="row">
-                    <div className="col-md-6">
-                      <label>Availability</label>
-                    </div>
-                    <div className="col-md-6">
-                      <p>6 months</p>
-                    </div>
-                  </div>
-                  <div className="row">
-                    <div className="col-md-12">
-                      <label>Your Bio</label>
-                      <br />
-                      <p>Your detail description</p>
-                    </div>
-                  </div>
-                </div>
+              </div>
+              <div>
+                <p className="ppropbtm">New York William Street</p>
+                <p className="ppropbtm">N.Y 1104 #45</p>
+              </div>
+            </div>
+            <div className="lowercontprop">
+              <div>
+                <h6 className="hsixinfo">
+                  Skills <hr className="hrinfo" />
+                </h6>
+              </div>
+              <div className="skilldiv">
+                <Link to="/stafeditprod" className="skillparainfo">
+                  Edit Product
+                </Link>
+
+                <p className="skillparainfo">Branding</p>
+                <p className="skillparainfo">Ux/Ui</p>
+                <Link to="/addproduct" className="skillparainfo">
+                  Add Product
+                </Link>
+              </div>
+            </div>
+          </div>
+          <div className="emptysapceprop"></div>
+
+          <div className="bottomrightprop">
+            <div className="cinfoprop">Contact Information</div>
+            <div className="infoprop">
+              <div className="leftinfoprop">
+                <h6 className="headingcontinfo">Phone :</h6>
+              </div>
+              <div className="rightinofprop">
+                <h6>
+                  <input></input>
+                </h6>
+              </div>
+            </div>
+            <div className="infoprop">
+              <div className="leftinfoprop">
+                <h6 className="headingcontinfo">Email :</h6>
+              </div>
+              <div className="rightinofprop">
+                <h6>
+                  <input></input>
+                </h6>
+              </div>
+            </div>
+            <div className="infoprop">
+              <div className="leftinfoprop">
+                <h6 className="headingcontinfo">Name :</h6>
+              </div>
+              <div className="rightinofprop">
+                <h6>
+                  <input></input>
+                </h6>
+              </div>
+            </div>
+            <div className="infoprop">
+              <div className="leftinfoprop">
+                <h6 className="headingcontinfo">Address :</h6>
+              </div>
+              <div className="rightinofprop">
+                <h6>
+                  <input></input>
+                </h6>
+              </div>
+            </div>
+            <div className="infoprop">
+              <div className="leftinfoprop">
+                <h6 className="headingcontinfo">Passsword :</h6>
+              </div>
+              <div className="rightinofprop">
+                <h6>
+                  <input></input>
+                </h6>
+              </div>
+            </div>
+            <button className="upbtn">Update</button>
+            <div className="basicinfodiv">Basic Information</div>
+            <div className="infoprop">
+              <div className="leftinfoprop">
+                <h6 className="headingcontinfo">Address :</h6>
+              </div>
+              <div className="rightinofprop">
+                <h6>New York East #5654 Fr-4</h6>
+              </div>
+            </div>
+            <div className="infoprop">
+              <div className="leftinfoprop">
+                <h6 className="headingcontinfo">Address :</h6>
+              </div>
+              <div className="rightinofprop">
+                <h6>New York East #5654 Fr-4</h6>
               </div>
             </div>
           </div>

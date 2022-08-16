@@ -61,7 +61,7 @@ export default function Search() {
   const { name } = useParams();
   async function GetData() {
     const res = await axios.get(
-      `${process.env.REACT_APP_BACKEND_URL}/api/products/search/${search}`
+      `http://localhost:4000/api/products/search/${search}`
     );
     console.log(res.data);
     setSearch(res.data);

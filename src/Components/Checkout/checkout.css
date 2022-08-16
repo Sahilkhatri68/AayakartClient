@@ -37,3 +37,14 @@
 .btnofdev {
   margin-top: 40px;
 }
+@media (max-width: 950px) {
+  .maincheckout {
+    display: block;
+  }
+  .leftcheck {
+    width: 100%;
+  }
+  .rightcheck {
+    width: 100%;
+  }
+}

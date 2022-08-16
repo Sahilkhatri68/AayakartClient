@@ -4,6 +4,9 @@
 .typediv {
   margin-top: 15px;
 }
+.cardcontgrid {
+  display: inline-block;
+}
 .iconanddesc {
   display: flex;
   align-items: center;
@@ -12,6 +15,9 @@
 }
 .cardcontdiv {
   padding: 4px;
+}
+.gridviewall {
+  display: block;
 }
 .cartbtndiv {
   width: "46%";
@@ -61,8 +67,48 @@
 .itemdivflex {
   display: flex;
 }
+.hiddennavb {
+  background-color: blue;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  display: none;
+}
+.hiddenhead {
+  color: white;
+}
+.gridviewall {
+  width: 100%;
+  margin: auto;
+}
+
 @media (max-width: 800px) {
   .gridviewall {
     display: block;
+  }
+}
+@media (max-width: 750px) {
+  .leftfilgrid {
+    display: none;
+  }
+  .hiddennavb {
+    display: flex;
+    background-color: blue;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    align-items: center;
+  }
+  .itemdivflex {
+    display: block;
+  }
+  .filtersettingicon {
+    color: white;
+  }
+  .gridviewall {
+    min-width: 100%;
+    margin: auto;
   }
 }

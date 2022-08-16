@@ -17,7 +17,7 @@ import FavoriteIcon from "@mui/icons-material/Favorite";
 import IconButton from "@mui/material/IconButton";
 import axios from "axios";
 import Swal from "sweetalert2";
-
+import DisplaySettingsIcon from "@mui/icons-material/DisplaySettings";
 import Card from "@mui/material/Card";
 import CardActions from "@mui/material/CardActions";
 import CardContent from "@mui/material/CardContent";
@@ -25,6 +25,11 @@ import CardMedia from "@mui/material/CardMedia";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 import { useEffect } from "react";
+import Checkbox from "@mui/material/Checkbox";
+import FavoriteBorder from "@mui/icons-material/FavoriteBorder";
+import Favorite from "@mui/icons-material/Favorite";
+import DeleteIcon from "@mui/icons-material/Delete";
+import PopupFilter from "./PopupFilter";
 const Item = styled(Paper)(({ theme }) => ({
   backgroundColor: theme.palette.mode === "dark" ? "#1A2027" : "#fff",
   ...theme.typography.body2,
@@ -32,6 +37,9 @@ const Item = styled(Paper)(({ theme }) => ({
   textAlign: "center",
   color: theme.palette.text.secondary,
 }));
+
+// heart icon
+const label = { inputProps: { "aria-label": "Checkbox demo" } };
 
 // range slider function
 
@@ -96,7 +104,7 @@ export default function BasicGrid() {
   const [title, setTitle] = useState("");
   const [featured_image, setFeatured_image] = useState("");
 
-  async function AddtoCart(product_id,   price, title, featured_image) {
+  async function AddtoCart() {
     const resp = await axios
       .post(`http://localhost:4000/api/cart/`, {
         product_id: product._id,
@@ -122,7 +130,7 @@ export default function BasicGrid() {
   return (
     <Box sx={{ flexGrow: 1, marginTop: 8 }}>
       <Grid container spacing={2}>
-        <Grid item xs={2}>
+        <Grid item xs={2} className="leftfilgrid">
           <Item>
             <h4>Filter</h4>
             {/* brand */}
@@ -223,11 +231,19 @@ export default function BasicGrid() {
           </Item>
         </Grid>
         <Grid item xs={10} className="gridviewall">
+          <div className="hiddennavb">
+            <div className="hiddenhead">Filters</div>
+            <div>
+              <IconButton aria-label="edit" size="small">
+                <PopupFilter />
+              </IconButton>
+            </div>
+          </div>
           <Item className="itemdivflex">
             {product.map((product) => {
               return (
                 <>
-                  <div>
+                  <div className="cardcontgrid">
                     <Card sx={{ maxWidth: 250, margin: 1 }}>
                       <CardMedia
                         component="img"
@@ -241,7 +257,11 @@ export default function BasicGrid() {
                             {product.title}
                           </Typography>
                           <IconButton aria-label="settings">
-                            <FavoriteIcon />
+                            <Checkbox
+                              {...label}
+                              icon={<FavoriteBorder />}
+                              checkedIcon={<Favorite />}
+                            />
                           </IconButton>
                         </div>
                         <Typography variant="body2" color="text.secondary">
@@ -258,14 +278,7 @@ export default function BasicGrid() {
                         <button
                           size="small"
                           className="cartbtndiv"
-                          onClick={() =>
-                            AddtoCart(
-                              product_id,
-                              price,
-                              title,
-                              featured_image
-                            )
-                          }
+                          onClick={() => AddtoCart()}
                         >
                           <div className="reacticonsdiv">
                             <BsCart3 />
