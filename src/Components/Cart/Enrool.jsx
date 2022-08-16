@@ -35,6 +35,7 @@ export default function Enroll() {
           icon: "success",
           title: "Good Job!",
           text: "Vendor Account created",
+          text: "Please login with Vendor account ",
         });
       })
       .catch(function (error) {

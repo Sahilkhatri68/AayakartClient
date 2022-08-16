@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 export const navData = [
   {
     url: "https://rukminim1.flixcart.com/flap/128/128/image/f15c02bfeb02d15d.png?q=100",
-    text: <Link>Top</Link>,
+    text: <Link class="dropbtn">Top</Link>,
   },
   {
     url: "https://rukminim1.flixcart.com/flap/128/128/image/29327f40e9c4d26b.png?q=100",

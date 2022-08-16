@@ -140,4 +140,14 @@
     width: 99%;
     margin: auto;
   }
+  .cartbtndivone {
+    width: 135px;
+    height: 43px;
+    font-size: 18px;
+  }
+  .buybtndivtow {
+    width: 135px;
+    height: 43px;
+    font-size: 18px;
+  }
 }
