@@ -82,7 +82,7 @@ export default function BasicGrid() {
 
   async function GetData() {
     const response = await axios
-      .get(`http://localhost:4000/api/products`)
+      .get(`https://apis.chatvait.com/api/products`)
       .then((response) => {
         setProduct(response.data);
         console.log(response.data);
@@ -106,7 +106,7 @@ export default function BasicGrid() {
 
   async function AddtoCart() {
     const resp = await axios
-      .post(`http://localhost:4000/api/cart/`, {
+      .post(`https://apis.chatvait.com/api/cart/`, {
         product_id: product._id,
         quantity: 1,
         price: product.sale_price,

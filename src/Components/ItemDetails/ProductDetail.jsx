@@ -48,7 +48,7 @@ export default function ProductDetail() {
 
   async function GetData() {
     const res = await axios
-      .get(`http://localhost:4000/api/products/slug/${slug}`)
+      .get(`https://apis.chatvait.com/api/products/slug/${slug}`)
       .then((res) => {
         setProduct(res.data);
         console.log(res.data);
