@@ -24,6 +24,7 @@ import ProductDetail from "./Components/ItemDetails/ProductDetail";
 import CartItem from "./Components/Cart/CartItem";
 import TotalView from "./Components/Cart/TotalView";
 import Checkout from "./Components/Checkout/Checkout";
+import EmptyLogin from "./Components/User/EmptyLogin";
 
 // credentials of axios--------------------
 axios.defaults.withCredentials = true;
@@ -69,6 +70,7 @@ function App() {
                 component={StaffEditProfile}
               ></Route>
               <Route exact path="/viewproduct" component={ViewProduct}></Route>
+              <Route exact path="/emptylogin" component={EmptyLogin}></Route>
               <Route component={NotFound} />
             </Switch>
           </Box>

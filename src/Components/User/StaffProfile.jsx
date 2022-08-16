@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./Staffprofile.css";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { FiPower } from "react-icons/fi";
 import axios from "axios";
 import wh from "../images/wh.jpg";
@@ -9,13 +9,18 @@ import { AiTwotoneStar, AiOutlineCheck } from "react-icons/ai";
 import { MdLocationPin } from "react-icons/md";
 import { BiMessageRounded } from "react-icons/bi";
 import { FaUserAlt } from "react-icons/fa";
+
 export default function StaffProfile() {
+
   const [user, setUser] = useState([]);
   async function GetUsers() {
     try {
-      const response = await axios.get("https://apis.chatvait.com/api/profile", {
-        withCredentials: true,
-      });
+      const response = await axios.get(
+        "https://apis.chatvait.com/api/profile",
+        {
+          withCredentials: true,
+        }
+      );
       setUser(response.data);
       console.log(response.data);
     } catch (error) {
@@ -25,6 +30,21 @@ export default function StaffProfile() {
   React.useEffect(() => {
     GetUsers();
   }, []);
+
+  // checking user
+  async function CheckUser() {
+
+    try {
+      const resp = await axios.post(
+        `https://apis.chatvait.com/api/login/checklogin`,
+        {
+          withCredentials: true,
+        }
+      );
+    } catch (error) {
+      console.log(error);
+    }
+  }
 
   // logout funtion--------------------
   async function UserLogut() {
