@@ -8,7 +8,9 @@ import {
   TableCell,
 } from "@material-ui/core";
 // import { LocalOffer  } from "@material-ui/icons";
-import { LocalOfferIcon as Badge } from "@mui/icons-material/LocalOffer";
+// import { LocalOfferIcon as Badge } from "@mui/icons-material/LocalOffer";
+import Badge from "@mui/material/Badge";
+
 import axios from "axios";
 import { useEffect } from "react";
 import { useState } from "react";
