@@ -4,7 +4,7 @@ import React, { useState } from "react";
 function MyOrder() {
   // getting orders
   const [user, setUser] = useState([]);
-  async function Getproducts() {
+  async function GetUser() {
     try {
       const response = await axios.get("http://localhost:4000/api/orders");
       setUser(response.data);
@@ -14,7 +14,7 @@ function MyOrder() {
     }
   }
   React.useEffect(() => {
-    Getproducts();
+    GetUser();
   }, []);
 
   return (
@@ -67,7 +67,7 @@ function MyOrder() {
                           <p className="text-muted mb-0 small">Qty: 1</p>
                         </div>
                         <div className="col-md-2 text-center d-flex justify-content-center align-items-center">
-                          <p className="text-muted mb-0 small">$499</p>
+                          <p className="text-muted mb-0 small">499</p>
                         </div>
                       </div>
                       <hr
@@ -133,7 +133,7 @@ function MyOrder() {
                           <p className="text-muted mb-0 small">Qty: 1</p>
                         </div>
                         <div className="col-md-2 text-center d-flex justify-content-center align-items-center">
-                          <p className="text-muted mb-0 small">$399</p>
+                          <p className="text-muted mb-0 small">399</p>
                         </div>
                       </div>
                       <hr
@@ -177,13 +177,13 @@ function MyOrder() {
                   <div className="d-flex justify-content-between pt-2">
                     <p className="fw-bold mb-0">Order Details</p>
                     <p className="text-muted mb-0">
-                      <span className="fw-bold me-4">Total</span> $898.00
+                      <span className="fw-bold me-4">Total</span> 898.00
                     </p>
                   </div>
                   <div className="d-flex justify-content-between pt-2">
                     <p className="text-muted mb-0">Invoice Number : 788152</p>
                     <p className="text-muted mb-0">
-                      <span className="fw-bold me-4">Discount</span> $19.00
+                      <span className="fw-bold me-4">Discount</span> 19.00
                     </p>
                   </div>
                   <div className="d-flex justify-content-between">
@@ -213,7 +213,7 @@ function MyOrder() {
                   }}
                 >
                   <h5 className="d-flex align-items-center justify-content-end text-white text-uppercase mb-0">
-                    Total paid: <span className="h2 mb-0 ms-2">$1040</span>
+                    Total paid: <span className="h2 mb-0 ms-2">1040</span>
                   </h5>
                 </div>
               </div>
