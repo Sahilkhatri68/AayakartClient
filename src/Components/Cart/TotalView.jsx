@@ -86,18 +86,18 @@ const TotalView = ({ cartItems }) => {
           <span className={classes.price}>₹{discount}</span>
         </Typography>
         <Typography>
-          Discount<span className={classes.price}>-₹{discount}</span>
+          Discount<span className={classes.price}>₹500{discount}</span>
         </Typography>
         <Typography>
           Delivery Charges
-          <span className={classes.price}>{product.sale_price}</span>
+          <span className={classes.price}>₹100</span>
         </Typography>
         <Typography className={classes.totalAmount}>
           Total Amount
           <span className={classes.price}>₹{product.sale_price}</span>
         </Typography>
         <Typography style={{ fontSize: 16, color: "green" }}>
-          You will save ₹{discount - 40} on this order
+          You will save ₹{100 - 40} on this order
         </Typography>
       </Box>
     </Box>

@@ -10,17 +10,16 @@ import { MdLocationPin } from "react-icons/md";
 import { BiMessageRounded } from "react-icons/bi";
 import { FaUserAlt } from "react-icons/fa";
 import EmptyLogin from "./EmptyLogin";
+
 import PowerSettingsNewIcon from "@mui/icons-material/PowerSettingsNew";
 export default function StaffProfile() {
+  // let navigate = useNavigate();
   const [user, setUser] = useState([]);
   async function GetUsers() {
     try {
-      const response = await axios.get(
-        "http://localhost:4000/api/profile",
-        {
-          withCredentials: true,
-        }
-      );
+      const response = await axios.get("http://localhost:4000/api/profile", {
+        withCredentials: true,
+      });
       setUser(response.data);
       console.log(response.data);
     } catch (error) {
@@ -48,10 +47,12 @@ export default function StaffProfile() {
   // logout funtion--------------------
   async function UserLogut() {
     try {
-      const resp = await axios.get("http://localhost:4000/api/logout", {
+      const resp = await axios.get("http://localhost:4000/api/login/logout", {
         withCredentials: true,
       });
       console.log(resp.data);
+      console.log("logout done");
+      // navigate("/");
     } catch (error) {
       console.log(error);
     }
@@ -59,7 +60,7 @@ export default function StaffProfile() {
   console.warn(user.length + "user");
   return (
     <>
-      {user.length != 0 ? (
+      {user.length !== 0 ? (
         <div className="mainuserprop">
           <div className="outeruserprop">
             <div className="leftuserprop">
@@ -100,7 +101,12 @@ export default function StaffProfile() {
                     </button>
                   </div>
                   <div className="parentbtndivprop">
-                    <button className="sendmsgbtnone">Logout</button>
+                    <button
+                      className="sendmsgbtnone"
+                      onClick={() => UserLogut()}
+                    >
+                      Logout
+                    </button>
                   </div>
                 </div>
                 <div className="aboutsecrtion">

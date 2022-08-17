@@ -3,8 +3,15 @@ import TotalView from "../Cart/TotalView";
 import "./checkout.css";
 import Box from "@mui/material/Box";
 import TextField from "@mui/material/TextField";
+import axios from "axios";
+import Swal from "sweetalert2";
 
 export default function Checkout() {
+  // getting user details for payement
+  async function OrderSubmit() {
+    Swal.fire("Order Placed!", "Good job!", "success");
+  }
+
   return (
     <>
       <div className="maincheckout">
@@ -76,7 +83,9 @@ export default function Checkout() {
             </div>
 
             <div className="btnofdev">
-              <button className="delbtn">Save And Deliver Here</button>
+              <button className="delbtn" onClick={() => OrderSubmit()}>
+                Save And Deliver Here
+              </button>
             </div>
           </div>
         </div>
