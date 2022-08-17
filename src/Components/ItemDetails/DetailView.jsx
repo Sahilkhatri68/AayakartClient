@@ -66,13 +66,15 @@ const data = {
 
 export default function DetailView() {
   const { slug } = useParams();
+  console.log(process.env.REACT_APP_BACKEND_URL);
+
   const classes = useStyles();
 
   // getting data
   const [product, setProduct] = useState([]);
   async function GetProduct() {
     const response = await axios
-      .get(`https://apis.chatvait.com/api/products/slug/${slug}`)
+      .get(`http://localhost:4000/api/products/slug/${slug}`)
       .then((response) => {
         setProduct(response.data);
         console.log(response.data);
@@ -91,7 +93,7 @@ export default function DetailView() {
 
   async function AddtoCart() {
     const resp = await axios
-      .post(`https://apis.chatvait.com/api/cart/`, {
+      .post(`http://localhost:4000/api/cart/`, {
         product_id: product._id,
         quantity: 1,
         price: product.sale_price,

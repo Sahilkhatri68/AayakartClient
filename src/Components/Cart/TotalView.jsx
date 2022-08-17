@@ -38,10 +38,11 @@ const TotalView = ({ cartItems }) => {
 
   async function GetData() {
     const response = await axios
-      .get(`https://apis.chatvait.com/api/cart/`)
+      .get(`http://localhost:4000/api/cart/`)
       .then((response) => {
         setProduct(response.data);
-        console.log(response.data);
+        GetData();
+        // console.log(response.data);
       })
       .catch((error) => {
         console.log(error);
@@ -56,11 +57,11 @@ const TotalView = ({ cartItems }) => {
 
   const totalAmount = () => {
     let price = 0;
-    console.log(product);
+    // console.log(product);
     product.map((product) => {
       let price = product.price;
       let discount = product.price - 1000;
-      console.log(discount);
+      // console.log(discount);
     });
     setPrice(price);
     setDiscount(discount);
@@ -81,7 +82,7 @@ const TotalView = ({ cartItems }) => {
 
       <Box className={clsx(classes.header, classes.container)}>
         <Typography>
-          Price ({product?.length} item)
+          Quantity ({product?.length} item)
           <span className={classes.price}>₹{discount}</span>
         </Typography>
         <Typography>

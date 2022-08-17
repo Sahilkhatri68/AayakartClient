@@ -58,9 +58,11 @@ export default function Cart() {
   // getting data
   const [product, setProduct] = useState([]);
   async function GetData(slug) {
-    const res = await axios.get(`https://apis.chatvait.com/api/cart`);
+    const res = await axios.get(`http://localhost:4000/api/cart`);
     setProduct(res.data);
-    console.log(res.data);
+    GetData();
+
+    // console.log(res.data);
   }
   useEffect(() => {
     GetData();

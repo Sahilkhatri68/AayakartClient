@@ -13,7 +13,7 @@ export default function StaffProfile() {
   const [user, setUser] = useState([]);
   async function GetUsers() {
     try {
-      const response = await axios.get("https://apis.chatvait.com/api/profile", {
+      const response = await axios.get("http://localhost:4000/api/profile", {
         withCredentials: true,
       });
       setUser(response.data);
@@ -29,7 +29,7 @@ export default function StaffProfile() {
   // logout funtion--------------------
   async function UserLogut() {
     try {
-      const resp = await axios.get("https://apis.chatvait.com/api/logout", {
+      const resp = await axios.get("http://localhost:4000/api/logout", {
         withCredentials: true,
       });
       console.log(resp.data);

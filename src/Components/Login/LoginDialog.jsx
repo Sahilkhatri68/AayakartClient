@@ -161,7 +161,7 @@ const LoginDialog = ({ open, setOpen, setAccount }) => {
   // swal fire
   const postdata = () => {
     axios
-      .post("https://apis.chatvait.com/api/register", {
+      .post("http://localhost:4000/api/register", {
         fullName: fullname,
         username: username,
         phone_number: phone_number,
@@ -182,7 +182,7 @@ const LoginDialog = ({ open, setOpen, setAccount }) => {
   const UserLogin = () => {
     axios
       .post(
-        `https://apis.chatvait.com/api/login`,
+        `http://localhost:4000/api/login`,
         {
           username: username,
           password: password,

@@ -3,39 +3,43 @@ import { Link } from "react-router-dom";
 export const navData = [
   {
     url: "https://rukminim1.flixcart.com/flap/128/128/image/f15c02bfeb02d15d.png?q=100",
-    text: <Link class="dropbtn">Top</Link>,
+    text: (
+      <Link to="/viewall" class="dropbtn">
+        Top
+      </Link>
+    ),
   },
   {
     url: "https://rukminim1.flixcart.com/flap/128/128/image/29327f40e9c4d26b.png?q=100",
-    text: <Link>Grocery</Link>,
+    text: <Link to="/viewall">Grocery</Link>,
   },
   {
     url: "https://rukminim1.flixcart.com/flap/128/128/image/22fddf3c7da4c4f4.png?q=100",
-    text: <Link>Mobile</Link>,
+    text: <Link to="/viewall">Mobile</Link>,
   },
   {
     url: "https://rukminim1.flixcart.com/flap/128/128/image/82b3ca5fb2301045.png?q=100",
-    text: <Link>Fashion</Link>,
+    text: <Link to="/viewall">Fashion</Link>,
   },
   {
     url: "https://rukminim1.flixcart.com/flap/128/128/image/69c6589653afdb9a.png?q=100",
-    text: <Link>Electronics</Link>,
+    text: <Link to="/viewall">Electronics</Link>,
   },
   {
     url: "https://rukminim1.flixcart.com/flap/128/128/image/ee162bad964c46ae.png?q=100",
-    text: <Link>Home</Link>,
+    text: <Link to="/viewall">Home</Link>,
   },
   {
     url: "https://rukminim1.flixcart.com/flap/128/128/image/0ff199d1bd27eb98.png?q=100",
-    text: <Link>Appliances</Link>,
+    text: <Link to="/viewall">Appliances</Link>,
   },
   {
     url: "https://rukminim1.flixcart.com/flap/128/128/image/71050627a56b4693.png?q=100",
-    text: <Link>Travel</Link>,
+    text: <Link to="/viewall">Travel</Link>,
   },
   {
     url: "https://rukminim1.flixcart.com/flap/128/128/image/dff3f7adcf3a90c6.png?q=100",
-    text: <Link>Beauty, Toys & More</Link>,
+    text: <Link to="/viewall">Beauty, Toys & More</Link>,
   },
 ];
 

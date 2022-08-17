@@ -61,7 +61,7 @@ export default function Search() {
   const { name } = useParams();
   async function GetData() {
     const res = await axios.get(
-      `https://apis.chatvait.com/api/products/search/${search}`
+      `http://localhost:4000/api/products/search/${search}`
     );
     console.log(res.data);
     setSearch(res.data);

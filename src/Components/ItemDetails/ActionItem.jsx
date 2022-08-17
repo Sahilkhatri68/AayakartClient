@@ -56,7 +56,7 @@ export default function ActionItem() {
   const { slug } = useParams();
   async function GetData() {
     const res = await axios
-      .get(`https://apis.chatvait.com/api/products/slug/${slug}`)
+      .get(`http://localhost:4000/api/products/slug/${slug}`)
       .then((res) => {
         setProduct(res.data);
         console.log(res.data);
@@ -75,7 +75,7 @@ export default function ActionItem() {
 
   async function AddItemToCart() {
     await axios
-      .post(`https://apis.chatvait.com/api/cart`, {
+      .post(`http://localhost:4000/api/cart`, {
         product_id: product._id,
         price: product.sale_price,
         title: product.title,
@@ -90,7 +90,7 @@ export default function ActionItem() {
 
   async function BuyNow() {
     await axios
-      .post(`https://apis.chatvait.com/api/orders`, {
+      .post(`http://localhost:4000/api/orders`, {
         product_id: product_id,
         price: price,
         title: title,

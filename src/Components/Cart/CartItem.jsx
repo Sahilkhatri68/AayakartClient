@@ -41,7 +41,7 @@ const useStyle = makeStyles({
 });
 
 const CartItem = ({ item, RemoveItemFromCart }) => {
-  console.log(item);
+  // console.log(item);
   const classes = useStyle();
   const fassured =
     "https://static-assets-web.flixcart.com/www/linchpin/fk-cp-zion/img/fa_62673a.png";
@@ -51,7 +51,7 @@ const CartItem = ({ item, RemoveItemFromCart }) => {
 
   async function GetData() {
     const response = await axios
-      .get(`https://apis.chatvait.com/api/cart`)
+      .get(`http://localhost:4000/api/cart`)
       .then((response) => {
         setProduct(response.data);
         console.log(response.data);
@@ -67,7 +67,7 @@ const CartItem = ({ item, RemoveItemFromCart }) => {
   const { id } = useParams();
   async function RemoveItem(id) {
     const res = await axios
-      .delete(`https://apis.chatvait.com/api/cart/${id}`)
+      .delete(`http://localhost:4000/api/cart/${id}`)
       .then((res) => {
         console.log(res.data);
         Swal.fire({
