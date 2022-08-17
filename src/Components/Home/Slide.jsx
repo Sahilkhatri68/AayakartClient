@@ -139,8 +139,10 @@ const MultiSlide = ({ data, timer, title }) => {
                 className={classes.text}
                 style={{ color: "red", opacity: ".8" }}
               >
-                <BiRupee />
-                {temp.sale_price}
+                {Intl.NumberFormat("en-US", {
+                  style: "currency",
+                  currency: "INR",
+                }).format(temp.sale_price)}
               </Typography>
             </Box>
           </Link>
