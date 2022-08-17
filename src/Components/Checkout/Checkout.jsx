@@ -5,11 +5,39 @@ import Box from "@mui/material/Box";
 import TextField from "@mui/material/TextField";
 import axios from "axios";
 import Swal from "sweetalert2";
+import { useState } from "react";
 
 export default function Checkout() {
   // getting user details for payement
-  async function OrderSubmit() {
-    Swal.fire("Order Placed!", "Good job!", "success");
+
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [pincode, setPincode] = useState("");
+  const [city, setCity] = useState("");
+  const [country, setCountry] = useState("");
+  const [state, setState] = useState("");
+  const [address_one, setAddress_one] = useState("");
+  const [address_two, setAddress_two] = useState("");
+
+  async function PostOrder() {
+    const resp = await axios
+      .post("http://localhost:4000/api/orders", {
+        name: name,
+        email: email,
+        pincode: pincode,
+        city: city,
+        country: country,
+        state: state,
+        address_one: address_one,
+        address_two: address_two,
+      })
+      .then(function (response) {
+        console.log(response);
+        Swal.fire("Order Placed!", "Good job!", "success");
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
   }
 
   return (
@@ -25,6 +53,9 @@ export default function Checkout() {
                 label="Name"
                 variant="outlined"
                 size="small"
+                name={name}
+                onChange={(e) => setName(e.target.value)}
+                required
               />
               <TextField
                 id="outlined-basic"
@@ -32,6 +63,9 @@ export default function Checkout() {
                 variant="outlined"
                 size="small"
                 sx={{ marginLeft: 3 }}
+                name={email}
+                onChange={(e) => setEmail(e.target.value)}
+                required
               />
             </div>
             {/* pincode */}
@@ -41,6 +75,9 @@ export default function Checkout() {
                 label="Pincode"
                 variant="outlined"
                 size="small"
+                name={pincode}
+                onChange={(e) => setPincode(e.target.value)}
+                required
               />
 
               <TextField
@@ -49,6 +86,9 @@ export default function Checkout() {
                 variant="outlined"
                 size="small"
                 sx={{ marginLeft: 3 }}
+                name={country}
+                onChange={(e) => setCountry(e.target.value)}
+                required
               />
             </div>
             <div className="txtfldinp">
@@ -57,6 +97,9 @@ export default function Checkout() {
                 label="City"
                 variant="outlined"
                 size="small"
+                name={city}
+                onChange={(e) => setCity(e.target.value)}
+                required
               />
               <TextField
                 id="outlined-basic"
@@ -64,6 +107,9 @@ export default function Checkout() {
                 variant="outlined"
                 size="small"
                 sx={{ marginLeft: 3 }}
+                name={state}
+                onChange={(e) => setState(e.target.value)}
+                required
               />
             </div>
             <div className="txtfldinp">
@@ -72,6 +118,9 @@ export default function Checkout() {
                 label="Address_One"
                 variant="outlined"
                 size="small"
+                name={address_one}
+                onChange={(e) => setAddress_one(e.target.value)}
+                required
               />
               <TextField
                 id="outlined-basic"
@@ -79,11 +128,14 @@ export default function Checkout() {
                 variant="outlined"
                 size="small"
                 sx={{ marginLeft: 3 }}
+                name={address_two}
+                onChange={(e) => setAddress_two(e.target.value)}
+                required
               />
             </div>
 
             <div className="btnofdev">
-              <button className="delbtn" onClick={() => OrderSubmit()}>
+              <button className="delbtn" onClick={() => PostOrder()}>
                 Save And Deliver Here
               </button>
             </div>

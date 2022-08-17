@@ -25,6 +25,7 @@ import CartItem from "./Components/Cart/CartItem";
 import TotalView from "./Components/Cart/TotalView";
 import Checkout from "./Components/Checkout/Checkout";
 import EmptyLogin from "./Components/User/EmptyLogin";
+import MyOrder from "./Components/User/MyOrder";
 
 // credentials of axios--------------------
 axios.defaults.withCredentials = true;
@@ -43,6 +44,7 @@ function App() {
               <Route exact path="/checkout" component={Checkout} />
               <Route exact path="/totalview" component={TotalView} />
               <Route exact path="/productdetail" component={ProductDetail} />
+              <Route exact path="/myorder" component={MyOrder} />
 
               <Route exact path="/cart" component={Cart} />
               <Route exact path="/product/:slug" component={DetailView} />

@@ -158,6 +158,10 @@ export default function StaffProfile() {
                   </Link>
 
                   <p className="skillparainfo">Branding</p>
+                  <Link to="/myorder" className="skillparainfo">
+                    My Orders
+                  </Link>
+                  <p className="skillparainfo">Branding</p>
                   <p className="skillparainfo">Ux/Ui</p>
                   <Link to="/addproduct" className="skillparainfo">
                     Add Product
