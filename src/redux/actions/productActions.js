@@ -3,7 +3,7 @@ import axios from "axios";
 
 export const getProducts = () => async (dispatch) => {
   try {
-    console.log("Hiiiiii");
+    // console.log("Hiiiiii");
     const { data } = await axios.get(`http://localhost:4000/api/products`);
     dispatch({ type: actionTypes.GET_PRODUCTS_SUCCESS, payload: data });
   } catch (error) {
