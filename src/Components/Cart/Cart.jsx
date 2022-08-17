@@ -70,7 +70,7 @@ export default function Cart() {
   //     dispatch(removeFromCart(_id));
   //   };
 
-  const buyNow = async () => {};
+  // const buyNow = async () => {};
 
   return (
     <>

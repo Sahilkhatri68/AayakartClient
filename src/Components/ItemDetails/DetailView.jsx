@@ -150,8 +150,10 @@ export default function DetailView() {
             <p className="sphead">Special Price</p>
             <div className="pricedivview">
               <h3>
-                <BiRupee />
-                {product.sale_price}
+                {Intl.NumberFormat("en-US", {
+                  style: "currency",
+                  currency: "INR",
+                }).format(product.sale_price)}
               </h3>
             </div>
           </div>

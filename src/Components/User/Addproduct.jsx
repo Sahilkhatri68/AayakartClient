@@ -5,6 +5,7 @@ import "./addproduct.css";
 // import TextField from "@mui/material/TextField";
 import Swal from "sweetalert2";
 import axios from "axios";
+
 export default function Addproduct() {
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -29,6 +30,14 @@ export default function Addproduct() {
   const [tags, setTags] = useState("");
 
   // Upload File
+  const onChange = (e) => {
+    let url = `https://apis.chatvait.com/api/files/`;
+    let file = e.target.files[0];
+    uploadFile(url, file);
+    // getFileData();
+  };
+
+  // Upload File
   const uploadFile = (url, file) => {
     let formData = new FormData();
     formData.append("uploadedFile", file);
@@ -39,15 +48,16 @@ export default function Addproduct() {
         },
       })
       .then((e) => {
-        console.log("File successfully uploaded", e);
+        // setAlert("File successfully uploaded", e);
         // setStatus("success", e);
         // getFileData();
         // setOpen(true);
+        console.log(e);
       })
       .catch((e) => {
-        console.log(e);
         // setAlert(e.response.data.message);
         // setStatus(e.response.data.status);
+        console.log(e);
       });
   };
 
@@ -229,12 +239,12 @@ export default function Addproduct() {
                         featured_image
                       </label>
                       <input
+                        name="uploadedFile"
+                        multiple
                         type="file"
-                        className="form-control"
-                        name={featured_image}
-                        onChange={(e) => setFeatured_image(e.target.value)}
-                        id=" Tax_Class"
-                        placeholder="image upload here"
+                        onChange={onChange}
+                        id="contained-button-file"
+                        accept="*"
                       />
                     </div>
                   </div>

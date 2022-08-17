@@ -106,6 +106,13 @@
   color: #435564;
   cursor: pointer;
 }
+.sendmsgbtnone {
+  border: none;
+  background-color: red;
+  color: white;
+  border-radius: 3px;
+  font-size: 16px;
+}
 .contbtnprop {
   border: none;
   background-color: #e3f2fd;
@@ -138,7 +145,7 @@
   font-weight: 600;
   font-size: 18px;
 }
-.upbtn{
+.upbtn {
   border: none;
   background-color: #4d97f3;
   color: white;
@@ -175,10 +182,10 @@
   .bottomuserprop {
     display: block;
   }
-   .leftuserprop{
+  .leftuserprop {
     width: 50%;
-   }
-   .bottomleftprop{
+  }
+  .bottomleftprop {
     width: 100%;
-   }
+  }
 }
