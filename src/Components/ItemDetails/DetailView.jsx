@@ -136,7 +136,7 @@ export default function DetailView() {
               <div className="reacticonsdiv">
                 <GiElectric />
               </div>
-              <div className="btntext"> Buy Now</div>
+              <Link to="/checkout" style={{ textDecoration: "none", color: "white" }}>  <div className="btntext"> Buy Now</div></Link>
             </button>
           </div>
         </div>

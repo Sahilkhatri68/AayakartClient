@@ -30,6 +30,7 @@ import FavoriteBorder from "@mui/icons-material/FavoriteBorder";
 import Favorite from "@mui/icons-material/Favorite";
 import DeleteIcon from "@mui/icons-material/Delete";
 import PopupFilter from "./PopupFilter";
+import { Link } from "react-router-dom";
 const Item = styled(Paper)(({ theme }) => ({
   backgroundColor: theme.palette.mode === "dark" ? "#1A2027" : "#fff",
   ...theme.typography.body2,
@@ -289,7 +290,7 @@ export default function BasicGrid() {
                           <div className="reacticonsdiv">
                             <GiElectric />
                           </div>
-                          <div className="btntext"> Buy Now</div>
+                          <Link to="/checkout" style={{ textDecoration: "none", color: "white" }}>  <div className="btntext">  Buy Now</div></Link>
                         </button>
                       </div>
                       <CardActions></CardActions>

@@ -10,7 +10,7 @@ import { MdLocationPin } from "react-icons/md";
 import { BiMessageRounded } from "react-icons/bi";
 import { FaUserAlt } from "react-icons/fa";
 import EmptyLogin from "./EmptyLogin";
-
+import { BsSuitHeartFill } from 'react-icons/bs';
 import PowerSettingsNewIcon from "@mui/icons-material/PowerSettingsNew";
 export default function StaffProfile() {
   // let navigate = useNavigate();
@@ -58,7 +58,7 @@ export default function StaffProfile() {
       console.log(error);
     }
   }
-  console.warn(user  + " user");
+  console.warn(user + " user");
   return (
     <>
       {user.length !== 0 ? (
@@ -98,7 +98,7 @@ export default function StaffProfile() {
                   </div>
                   <div className="parentbtndivprop">
                     <button className="contbtnprop">
-                      <AiOutlineCheck /> Contact
+                       <BsSuitHeartFill/> Favourites
                     </button>
                   </div>
                   <div className="parentbtndivprop">
