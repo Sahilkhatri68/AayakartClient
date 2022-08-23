@@ -15,6 +15,7 @@ import PowerSettingsNewIcon from "@mui/icons-material/PowerSettingsNew";
 export default function StaffProfile() {
   // let navigate = useNavigate();
   const [user, setUser] = useState([]);
+  console.log(user)
   async function GetUsers() {
     try {
       const response = await axios.get("https://apis.chatvait.com/api/profile", {
@@ -57,7 +58,7 @@ export default function StaffProfile() {
       console.log(error);
     }
   }
-  console.warn(user.length + "user");
+  console.warn(user  + " user");
   return (
     <>
       {user.length !== 0 ? (
@@ -225,8 +226,10 @@ export default function StaffProfile() {
             </div>
           </div>
         </div>
+
       ) : (
         <EmptyLogin />
+
       )}
     </>
   );

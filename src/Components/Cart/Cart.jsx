@@ -76,7 +76,7 @@ export default function Cart() {
 
   return (
     <>
-      {product.length != 0 ? (
+      {product.length !== 0 ? (
         <Grid container className={classes.component}>
           <Grid
             item

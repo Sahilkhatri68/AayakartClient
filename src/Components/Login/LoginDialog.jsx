@@ -106,7 +106,7 @@ const accountInitialValues = {
   },
 };
 
-const LoginDialog = ({ open, setOpen, setAccount }) => {
+export default function LoginDialog({ open, setOpen, setAccount }) {
   const classes = useStyle();
   const [login, setLogin] = useState(loginInitialValues);
   const [signup, setSignup] = useState(signupInitialValues);
@@ -172,6 +172,7 @@ const LoginDialog = ({ open, setOpen, setAccount }) => {
       })
       .then(function (response) {
         console.log(response);
+        alert("Account Created Successfuly")
       })
       .catch(function (error) {
         console.log(error);
@@ -304,4 +305,4 @@ const LoginDialog = ({ open, setOpen, setAccount }) => {
   );
 };
 
-export default LoginDialog;
+
