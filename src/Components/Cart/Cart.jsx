@@ -58,7 +58,7 @@ export default function Cart() {
   // getting data
   const [product, setProduct] = useState([]);
   async function GetData(slug) {
-    const res = await axios.get(`http://localhost:4000/api/cart`);
+    const res = await axios.get(`https://apis.chatvait.com/api/cart`);
     setProduct(res.data);
     GetData();
 

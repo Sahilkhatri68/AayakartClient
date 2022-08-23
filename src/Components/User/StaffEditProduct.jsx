@@ -8,7 +8,7 @@ export default function StaffEditProduct() {
   async function Getproducts(slug) {
     try {
       const response = await axios.get(
-        `http://localhost:4000/api/products/slug/${slug}`
+        `https://apis.chatvait.com/api/products/slug/${slug}`
       );
       setProduct(response.data);
       console.log(response.data);

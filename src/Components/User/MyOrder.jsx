@@ -6,7 +6,7 @@ function MyOrder() {
   const [user, setUser] = useState([]);
   async function GetUser() {
     try {
-      const response = await axios.get("http://localhost:4000/api/orders");
+      const response = await axios.get("https://apis.chatvait.com/api/orders");
       setUser(response.data);
       console.log(response.data);
     } catch (error) {

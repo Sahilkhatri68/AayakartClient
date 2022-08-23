@@ -163,7 +163,7 @@ export default function NewProduct() {
   //Create Product
   function createPost() {
     axios
-      .post(`http://localhost:4000/api/products/`, {
+      .post(`https://apis.chatvait.com/api/products/`, {
         productTitle,
         slug,
         productDescription,
@@ -213,7 +213,7 @@ export default function NewProduct() {
   const [category, setCategory] = React.useState([]);
   React.useEffect(() => {
     axios
-      .get(`http://localhost:4000/api/products/category/`)
+      .get(`https://apis.chatvait.com/api/products/category/`)
       .then((response) => {
         setCategory(response.data);
         // setLoading(false);
