@@ -26,6 +26,7 @@ import TotalView from "./Components/Cart/TotalView";
 import Checkout from "./Components/Checkout/Checkout";
 import EmptyLogin from "./Components/User/EmptyLogin";
 import MyOrder from "./Components/User/MyOrder";
+import Wishlist from "./Components/Wishlist/Wishlist";
 
 // credentials of axios--------------------
 axios.defaults.withCredentials = true;
@@ -57,6 +58,7 @@ function App() {
                 component={StaffEditProduct}
               ></Route>
               <Route exact path="/Viewall" component={BasicGrid}></Route>
+              <Route exact path="/wishlist" component={Wishlist}></Route>
               <Route exact path="/Profile" component={Profile}></Route>
               <Route exact path="/addproduct" component={Addproduct}></Route>
               <Route exact path="/addnewproduct" component={NewProduct}></Route>
