@@ -161,7 +161,7 @@ export default function LoginDialog({ open, setOpen, setAccount }) {
   // swal fire
   const postdata = () => {
     axios
-      .post("https://apis.chatvait.com/api/register", {
+      .post("https://ayakart.dauqu.com/api/register", {
         fullName: fullname,
         username: username,
         phone_number: phone_number,
@@ -183,7 +183,7 @@ export default function LoginDialog({ open, setOpen, setAccount }) {
   const UserLogin = () => {
     axios
       .post(
-        `https://apis.chatvait.com/api/login`,
+        `https://ayakart.dauqu.com/api/login`,
         {
           username: username,
           password: password,

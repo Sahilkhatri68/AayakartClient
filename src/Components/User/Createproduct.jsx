@@ -163,7 +163,7 @@ export default function NewProduct() {
   //Create Product
   function createPost() {
     axios
-      .post(`https://apis.chatvait.com/api/products/`, {
+      .post(`https://ayakart.dauqu.com/api/products/`, {
         productTitle,
         slug,
         productDescription,
@@ -213,7 +213,7 @@ export default function NewProduct() {
   const [category, setCategory] = React.useState([]);
   React.useEffect(() => {
     axios
-      .get(`https://apis.chatvait.com/api/products/category/`)
+      .get(`https://ayakart.dauqu.com/api/products/category/`)
       .then((response) => {
         setCategory(response.data);
         // setLoading(false);

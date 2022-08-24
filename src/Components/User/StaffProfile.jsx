@@ -18,7 +18,7 @@ export default function StaffProfile() {
   console.log(user)
   async function GetUsers() {
     try {
-      const response = await axios.get("https://apis.chatvait.com/api/profile", {
+      const response = await axios.get("https://ayakart.dauqu.com/api/profile", {
         withCredentials: true,
       });
       setUser(response.data);
@@ -35,7 +35,7 @@ export default function StaffProfile() {
   async function CheckUser() {
     try {
       const resp = await axios.post(
-        `https://apis.chatvait.com/api/login/checklogin`,
+        `https://ayakart.dauqu.com/api/login/checklogin`,
         {
           withCredentials: true,
         }
@@ -48,7 +48,7 @@ export default function StaffProfile() {
   // logout funtion--------------------
   async function UserLogut() {
     try {
-      const resp = await axios.get("https://apis.chatvait.com/api/login/logout", {
+      const resp = await axios.get("https://ayakart.dauqu.com/api/login/logout", {
         withCredentials: true,
       });
       console.log(resp.data);

@@ -38,7 +38,7 @@ const TotalView = ({ cartItems }) => {
 
   async function GetData() {
     const response = await axios
-      .get(`https://apis.chatvait.com/api/cart/`)
+      .get(`https://ayakart.dauqu.com/api/cart/`)
       .then((response) => {
         setProduct(response.data);
         GetData();

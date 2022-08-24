@@ -31,7 +31,7 @@ export default function Addproduct() {
 
   // Upload File
   const onChange = (e) => {
-    let url = `https://apis.chatvait.com/api/files/`;
+    let url = `https://ayakart.dauqu.com/api/files/`;
     let file = e.target.files[0];
     uploadFile(url, file);
     // getFileData();

@@ -21,7 +21,7 @@ export default function Checkout() {
 
   async function PostOrder() {
     const resp = await axios
-      .post("https://apis.chatvait.com/api/orders", {
+      .post("https://ayakart.dauqu.com/api/orders", {
         name: name,
         email: email,
         pincode: pincode,

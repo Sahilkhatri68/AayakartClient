@@ -16,7 +16,7 @@ export default function ViewProduct() {
   const [product, setProduct] = useState([]);
   async function Getproducts() {
     try {
-      const response = await axios.get("https://apis.chatvait.com/api/products");
+      const response = await axios.get("https://ayakart.dauqu.com/api/products");
       setProduct(response.data);
       console.log(response.data);
     } catch (error) {
@@ -30,7 +30,7 @@ export default function ViewProduct() {
   // async function HandleEdit(id) {
   //   try {
   //     const response = await axios.get(
-  //       `https://apis.chatvait.com/api/products/${id}`
+  //       `https://ayakart.dauqu.com/api/products/${id}`
   //     );
   //     setProduct(response.data);
   //   } catch (error) {
@@ -45,7 +45,7 @@ export default function ViewProduct() {
 
   const RemoveProduct = async (_id) => {
     try {
-      await axios.delete(`https://apis.chatvait.com/api/products/${_id}`);
+      await axios.delete(`https://ayakart.dauqu.com/api/products/${_id}`);
       Swal.fire("Product Deleted!", "success");
       Getproducts();
     } catch (error) {

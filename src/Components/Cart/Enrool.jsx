@@ -19,7 +19,7 @@ export default function Enroll() {
   const [location, setLocation] = useState("");
   const postdata = () => {
     axios
-      .post("https://apis.chatvait.com/api/register", {
+      .post("https://ayakart.dauqu.com/api/register", {
         fullName: fullname,
         username: username,
         phone_number: phone_number,

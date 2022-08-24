@@ -51,7 +51,7 @@ const CartItem = ({ item, RemoveItemFromCart }) => {
 
   async function GetData() {
     const response = await axios
-      .get(`https://apis.chatvait.com/api/cart`)
+      .get(`https://ayakart.dauqu.com/api/cart`)
       .then((response) => {
         setProduct(response.data);
         console.log(response.data);
@@ -67,7 +67,7 @@ const CartItem = ({ item, RemoveItemFromCart }) => {
   const { id } = useParams();
   async function RemoveItem(id) {
     const res = await axios
-      .delete(`https://apis.chatvait.com/api/cart/${id}`)
+      .delete(`https://ayakart.dauqu.com/api/cart/${id}`)
       .then((res) => {
         console.log(res.data);
         Swal.fire({
