@@ -7,7 +7,8 @@ import { LoginContext } from "../../context/ContextProvider";
 import { useSelector } from "react-redux";
 import Profile from "./Profile";
 import PersonIcon from "@mui/icons-material/Person";
-
+import DeleteIcon from '@mui/icons-material/Delete';
+import FavoriteIcon from '@mui/icons-material/Favorite';
 import { FaDownload, FaGooglePlay } from "react-icons/fa";
 import { GiReceiveMoney } from "react-icons/gi";
 const useStyle = makeStyles((theme) => ({
@@ -21,7 +22,7 @@ const useStyle = makeStyles((theme) => ({
     margin: "0 0% 0 auto",
     display: "flex",
     "& > *": {
-      marginRight: 45,
+      marginRight: 26,
       textDecoration: "none",
       color: "#FFFFFF",
       fontSize: 12,
@@ -34,7 +35,7 @@ const useStyle = makeStyles((theme) => ({
         marginTop: 10,
       },
       "@media (max-width: 1055px )": {
-        marginRight: 20,
+        marginRight: 16,
       },
     },
     [theme.breakpoints.down("sm")]: {
@@ -106,6 +107,12 @@ const CustomButtons = () => {
           <PersonIcon />
         </Badge>
         <Typography style={{ marginLeft: 5, color: "black" }}>User</Typography>
+      </Link>
+      <Link to="/" className={classes.container}>
+        <Badge badgeContent={cartItems?.length} style={{ color: "black" }}>
+        <FavoriteIcon/>
+        </Badge>
+        <Typography style={{ marginLeft: 5, color: "black" }}></Typography>
       </Link>
       <LoginDialog open={open} setOpen={setOpen} setAccount={setAccount} />
     </Box>

@@ -21,7 +21,7 @@ const useStyle = makeStyles((theme) => ({
     height: 55,
   },
   component: {
-    marginLeft: "12%",
+    marginLeft: "10%",
     lineHeight: 0,
     color: "#FFFFFF",
     textDecoration: "none",

@@ -16,14 +16,14 @@ const useStyle = makeStyles({
   component: {
     height: "70vh",
 
-    maxWidth: "unset !important",
+    maxWidth: "700px",
   },
   image: {
     backgroundImage: `url(${"https://static-assets-web.flixcart.com/www/linchpin/fk-cp-zion/img/login_img_c4a81e.png"})`,
     background: "#2874f0",
     backgroundPosition: "center 85%",
     backgroundRepeat: "no-repeat",
-    height: "70vh",
+    height: "80vh",
     width: "40%",
     padding: "45px 35px",
     "& > *": {
